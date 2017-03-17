@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2017/03/11 15:08:23 by gpouyat          ###   ########.fr        #
+#    Updated: 2017/03/17 12:28:11 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ CC = gcc
 FLAGS = -Wall -Wextra -Werror
 
 NAME = libft.a
+PRINT = "ft_printf srcs"
 
 C_NO = \033[0m
 C_G = \033[0;32m
@@ -64,9 +65,11 @@ OBJLIB = $(addprefix $(OBJLIB_PATH)/,$(OBJLIB_NAME))
 all: $(NAME)
 
 $(NAME): $(OBJ) $(OBJLIB)
+	@printf "\n$(C_B)%-20s\tCompilation\t$(C_G)[ OK ✔ ]$(C_NO)" $(PRINT)
+	@printf "\n$(C_Y)%-20s\tCompilation\t$(C_G)[ OK ✔ ]$(C_NO)" "lib_srcs"
 	@ar rc $(NAME) $(OBJ) $(OBJLIB)
 	@ranlib $(NAME)
-	@printf "\n$(C_B)%-20s\t$(C_R)Compilation\t$(C_G)[ OK ✔ ]$(C_NO)\n" $(NAME)
+	@printf "\n$(C_NO)%-20s\t$(C_R)Compilation\t$(C_G)[ OK ✔ ]$(C_NO)\n" $(NAME)
 
 $(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
 	@mkdir -p $(OBJ_PATH)
