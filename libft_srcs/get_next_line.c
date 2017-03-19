@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:27:15 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/03/07 14:50:01 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/03/19 11:53:16 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ static int		read_gnl(char **stock, char *buf, char **line)
 		*stock = ft_strdup(temp + 1);
 		free(buf);
 		temp = NULL;
+		if (*stock && *stock[0] == 0)
+			ft_fri(stock);
 		return (0);
 	}
 	return (1);
@@ -78,11 +80,10 @@ int				get_next_line(const int fd, char **line)
 	{
 		buf[ret] = '\0';
 		if (read_gnl(&stock, buf, line) == 0)
-			return (1);
+				return (1);
 		temp = stock;
 		stock = ft_strjoin(stock, buf);
-		free(temp);
-		temp = NULL;
+		ft_fri(&temp);
 	}
 	return (win_lines_return(ret, line, &stock, &buf));
 }
