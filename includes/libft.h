@@ -6,17 +6,20 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/03/15 15:05:47 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/06/11 13:05:11 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
 # include <stdint.h>
 # include <limits.h>
+# include <errno.h>
+# include <stdio.h>
 # include "get_next_line.h"
 # include "ft_printf.h"
 
@@ -61,6 +64,15 @@ typedef struct		s_list
 # define BL_PURPLE	"\033[105m"
 # define B_TURQ		"\033[106m"
 
+/*
+** ERROR FUNCTION
+*/
+int					over_p(char *str, char *ag, int nb);
+void				basicerror_out(char *name, char *error, int nb);
+int					over(char *str, int nb);
+void				*over_str(char *str);
+void				basicerror(char *name, char *error, int ex);
+
 void				ft_fri(char **adrr);
 char				**ft_strdbldup(char **str);
 void				ft_strdblfree(char **tab);
@@ -70,7 +82,6 @@ int					ft_indexchr(const char *s, int c);
 void				*over_p_str(char *str, char *ag);
 char				*ft_fstrjoin(char *s1, char const *s2);
 char				*ft_strjoinf(char const *s1, char *s2);
-int					over_p(char *str, char *ag, int nb);
 char				*rev(char *str);
 uintmax_t			nb_of_figure(uintmax_t nb, uintmax_t base);
 char				*ft_getchar(wchar_t c);
@@ -88,7 +99,6 @@ char				*ft_itoa_base(int nb, unsigned int base);
 char				*ft_itoa_plusbase(int nb, unsigned int base);
 int					ft_atoi_base(char *str, int base);
 char				*ft_replace(char *src1, char *src2, int index, int size);
-void				basicerror_out(char *name, char *error, int nb);
 char				**tri_strdbl_r(char **str);
 char				**tri_strdbl(char **str);
 void				ft_lstsuppress(t_list *list);
@@ -96,8 +106,6 @@ void				ft_lstaddnew(t_list **list, void const *content,
 					size_t content_size);
 char				*ft_strtolower(char *str);
 char				**ft_strdblnew(int	size);
-int					over(char *str, int nb);
-void				*over_str(char *str);
 t_list				*ft_lstmap(t_list *lst, t_list *(f)(t_list *elem));
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
@@ -124,7 +132,6 @@ void				ft_putstr_fd(char const *str, int fd);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putchar(char c);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				basicerror(char *name, char *error, int ex);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
 size_t				ft_strlen(const char *str);
