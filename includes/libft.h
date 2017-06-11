@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/06/11 13:05:11 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/06/11 13:58:20 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,33 @@ void				basicerror_out(char *name, char *error, int nb);
 int					over(char *str, int nb);
 void				*over_str(char *str);
 void				basicerror(char *name, char *error, int ex);
+void				*over_p_str(char *str, char *ag);
 
-void				ft_fri(char **adrr);
+/*
+** LIST FUNCTION
+*/
+t_list				*ft_lstnew(void const *content, size_t content_size);
+t_list				*ft_lstmap(t_list *lst, t_list *(f)(t_list *elem));
+void				ft_lstsuppress(t_list *list);
+void				ft_lstaddnew(t_list **list, void const *content,
+						size_t content_size);
+void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
+void				ft_lstadd(t_list **alst, t_list *nw);
+
+/*
+** TAB FUNCTION
+*/
 char				**ft_strdbldup(char **str);
 void				ft_strdblfree(char **tab);
+char				**tri_strdbl_r(char **str);
+char				**tri_strdbl(char **str);
+char				**ft_strdblnew(int	size);
+
+void				ft_fri(char **adrr);
 int					ft_is_number(char *s);
 int					ft_isprintable(char *s);
 int					ft_indexchr(const char *s, int c);
-void				*over_p_str(char *str, char *ag);
 char				*ft_fstrjoin(char *s1, char const *s2);
 char				*ft_strjoinf(char const *s1, char *s2);
 char				*rev(char *str);
@@ -99,18 +118,8 @@ char				*ft_itoa_base(int nb, unsigned int base);
 char				*ft_itoa_plusbase(int nb, unsigned int base);
 int					ft_atoi_base(char *str, int base);
 char				*ft_replace(char *src1, char *src2, int index, int size);
-char				**tri_strdbl_r(char **str);
-char				**tri_strdbl(char **str);
-void				ft_lstsuppress(t_list *list);
-void				ft_lstaddnew(t_list **list, void const *content,
-					size_t content_size);
 char				*ft_strtolower(char *str);
-char				**ft_strdblnew(int	size);
-t_list				*ft_lstmap(t_list *lst, t_list *(f)(t_list *elem));
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
-void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
-void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstadd(t_list **alst, t_list *nw);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
 void				ft_striter(char *s, void (*f)(char *));
 void				ft_strclr(char *s);
@@ -165,6 +174,5 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				*ft_strjoin(char const *s1, char const *s2);
 char				*ft_strtrim(char const *s);
 char				**ft_strsplit(char const *s, char c);
-t_list				*ft_lstnew(void const *content, size_t content_size);
 
 #endif
