@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/03 13:31:35 by gpouyat           #+#    #+#             */
-/*   Updated: 2016/11/11 12:28:49 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/06/16 14:09:53 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int	ft_strcmp(const char *s1, const char *s2)
 	int		i;
 
 	i = 0;
+	if (!s1 || !s2)
+		return (-1);
 	while (s1[i] == s2[i] && s1[i] != '\0' && s2[i] != '\0')
 	{
 		i++;

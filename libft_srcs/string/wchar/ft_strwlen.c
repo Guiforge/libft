@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/17 14:03:22 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/01/17 14:05:30 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/06/16 15:28:52 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int		ft_strwlen(wchar_t *s)
 	int		i;
 
 	i = 0;
-	while (s[i])
+	while (s && s[i])
 		i++;
 	return (i);
 }
