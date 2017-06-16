@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 21:18:17 by gpouyat           #+#    #+#             */
-/*   Updated: 2016/11/07 16:41:15 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/06/16 14:35:12 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,5 @@
 
 void	ft_putstr(char const *str)
 {
-	int		i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i = i + 1;
-	}
+	ft_putstr_fd(str, 1);
 }

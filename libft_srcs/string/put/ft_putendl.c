@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/02 21:18:17 by gpouyat           #+#    #+#             */
-/*   Updated: 2016/11/07 16:40:57 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/06/16 14:33:59 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,5 @@
 
 void	ft_putendl(char const *str)
 {
-	int		i;
-
-	i = 0;
-	while (str[i])
-	{
-		ft_putchar(str[i]);
-		i = i + 1;
-	}
-	ft_putchar('\n');
+	ft_putendl_fd(str, 1);
 }

@@ -47,7 +47,7 @@ ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c\
 ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c\
 get_next_line.c over.c ft_strdblnew.c ft_strtolower.c error.c ft_replace.c\
 ft_itoa_base.c ft_atoi_base.c pf_itoa_base.c ft_putwchar.c ft_strwlen.c\
-ft_getchar.c ft_strdbldup.c ft_isprintable.c ft_is_number.c ft_strdblfree.c\
+ft_getchar.c ft_strdbldup.c ft_str_isprint.c ft_str_isdigit.c ft_strdblfree.c\
 ft_fri.c
 
 INC_NAME = libft.h

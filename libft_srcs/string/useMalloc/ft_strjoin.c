@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 13:14:03 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/02/06 15:16:24 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/06/16 15:26:42 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,48 +16,21 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*tab;
 
-	if (s1 == NULL)
-		return (NULL);
 	tab = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (tab != NULL)
 	{
-		tab = ft_strcat(tab, s1);
-		tab = ft_strcat(tab, s2);
+		if (s1)
+			tab = ft_strcat(tab, s1);
+		if (s2)
+			tab = ft_strcat(tab, s2);
 		return (tab);
 	}
 	return (NULL);
 }
 
-char	*ft_fstrjoin(char *s1, char const *s2)
+char	*ft_strjoincl(char *s1, char const *s2, int free)
 {
-	char	*tab;
-
-	if (s1 == NULL)
-		return (NULL);
-	tab = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (tab != NULL)
-	{
-		tab = ft_strcat(tab, s1);
-		tab = ft_strcat(tab, s2);
-		free(s1);
-		return (tab);
-	}
-	return (NULL);
-}
-
-char	*ft_strjoinf(char const *s1, char *s2)
-{
-	char	*tab;
-
-	if (s1 == NULL)
-		return (NULL);
-	tab = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (tab != NULL)
-	{
-		tab = ft_strcat(tab, s1);
-		tab = ft_strcat(tab, s2);
-		free(s2);
-		return (tab);
-	}
-	return (NULL);
+	ft_strjoin(s1, s2);
+	((free == 1 || free == 3) && s1) ? ft_fri((char **)&s1) : 0;
+	((free == 2 || free == 3) && s2) ? ft_fri((char **)&s2) : 0;
 }
