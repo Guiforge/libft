@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/17 10:49:00 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/06/17 11:21:12 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/07/17 17:28:59 by guiforge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ t_btree	*btree_create_node(void *item)
 	btree = NULL;
 	if (!(btree = (t_btree*)malloc(sizeof(t_btree))))
 		return (NULL);
+	btree->parent = NULL;
 	btree->left = NULL;
 	btree->right = NULL;
 	btree->item = item;

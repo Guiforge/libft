@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/17 10:44:56 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/06/18 14:04:10 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/07/17 17:28:37 by guiforge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 typedef struct		s_btree
 {
+	struct s_btree	*parent;
 	struct s_btree	*left;
 	struct s_btree	*right;
 	void						*item;
