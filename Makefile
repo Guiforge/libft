@@ -6,18 +6,13 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2017/03/17 12:28:11 by gpouyat          ###   ########.fr        #
+#    Updated: 2017/07/17 17:21:35 by guiforge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.PHONY: all clean fclean re norme main
+.NOTPARALLEL:
 
-CC = gcc
-
-FLAGS = -Wall -Wextra -Werror
-
-NAME = libft.a
-PRINT = "ft_printf srcs"
+.PHONY: all clean fclean re
 
 C_NO = \033[0m
 C_G = \033[0;32m
@@ -26,78 +21,119 @@ C_B = \033[1;34m
 C_C = \033[1;36m
 C_R = \033[1;31m
 
-SRC_PATH = ./print_srcs
-LIB_PATH = ./libft_srcs
-INC_PATH = ./includes
-OBJ_PATH = ./obj
-OBJLIB_PATH = ./obj
+SRC_SUBDIR = libft_srcs/error
+SRCS			+= error.c over_p_str.c over_p.c over_str.c over.c
 
-SRC_NAME =	convers.c ft_printf.c get.c display_flags.c ft_cs.c ft_o.c\
-				type_of_number.c ft_x.c
+SRC_SUBDIR += libft_srcs/list
+SRCS			+= ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstfree.c ft_lstiter.c\
+ 							ft_lstmap.c ft_lstnew.c
 
-LIB_NAME = 	ft_putchar.c ft_putchar_fd.c ft_putstr.c ft_strlen.c ft_putstr_fd.c\
-ft_putnbr.c ft_putnbr_fd.c ft_putendl.c ft_putendl_fd.c ft_itoa.c ft_strdup.c\
-ft_strcmp.c ft_strncmp.c ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c\
-ft_isprint.c ft_toupper.c ft_tolower.c ft_strcpy.c ft_strncpy.c ft_memset.c\
-ft_memmove.c ft_bzero.c ft_atoi.c ft_memccpy.c ft_memchr.c ft_memcmp.c\
-ft_strcat.c ft_strncat.c ft_memcpy.c ft_strlcat.c ft_strchr.c ft_strrchr.c\
-ft_strstr.c ft_strnstr.c ft_memalloc.c ft_memdel.c ft_strnew.c ft_strdel.c\
-ft_striter.c ft_strclr.c ft_striteri.c ft_strmap.c ft_strmapi.c ft_strmapi.c\
-ft_strequ.c ft_strnequ.c ft_strsub.c ft_strjoin.c ft_strtrim.c ft_strsplit.c\
-ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c ft_lstiter.c ft_lstmap.c\
-get_next_line.c over.c ft_strdblnew.c ft_strtolower.c error.c ft_replace.c\
-ft_itoa_base.c ft_atoi_base.c pf_itoa_base.c ft_putwchar.c ft_strwlen.c\
-ft_getchar.c ft_strdbldup.c ft_str_isprint.c ft_str_isdigit.c ft_strdblfree.c\
-ft_fri.c
+SRC_SUBDIR += libft_srcs/string
+SRCS			+= ft_atoi_base.c ft_atoi.c ft_strcat.c ft_strchr.c ft_strcpy.c\
+ 							ft_striter.c ft_striteri.c ft_strlcat.c ft_strlen.c ft_strmap.c\
+						   ft_strmapi.c ft_strncat.c ft_strncpy.c ft_strnstr.c ft_strrchr.c\
+							  ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtolower.c\
+								 ft_tolower.c ft_toupper.c
 
-INC_NAME = libft.h
+SRC_SUBDIR += libft_srcs/string/comp
+SRCS			+= ft_strcmpa.c ft_strcmp.c ft_strequ.c ft_strncmp.c ft_strnequ.c
 
-OBJ_NAME = $(SRC_NAME:.c=.o)
-OBJLIB_NAME = $(LIB_NAME:.c=.o)
+SRC_SUBDIR += libft_srcs/string/free
+SRCS			+= ft_fri.c ft_strclr.c ft_strdel.c
+
+SRC_SUBDIR += libft_srcs/string/is
+SRCS			+= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c\
+							ft_str_isdigit.c ft_str_isprint.c ft_str_isvalue.c
+
+SRC_SUBDIR += libft_srcs/string/put
+SRCS			+= ft_putchar.c ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c\
+ 							ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c
+
+SRC_SUBDIR += libft_srcs/string/useMalloc
+SRCS			+= ft_itoa_base.c ft_itoa.c ft_replace.c ft_strdup.c ft_strjoin.c\
+ 							ft_strnew.c ft_strtrim.c pf_itoa_base.c
+
+SRC_SUBDIR += libft_srcs/string/wchar
+SRCS			+= ft_getchar.c ft_putwchar.c ft_strwlen.c
+
+SRC_SUBDIR += libft_srcs/tab
+SRCS			+= ft_strdbldup.c ft_strdblfree.c ft_strdblnew.c ft_strdblprint.c\
+ 							tri.c
+
+SRC_SUBDIR += libft_srcs/void
+SRCS			+= ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c\
+ 							ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c
+
+SRC_SUBDIR += libft_srcs
+SRCS			+= get_next_line.c
+
+SRC_SUBDIR += print_srcs
+SRCS			+= convers.c  display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
+							type_of_number.c
+
+SRC_SUBDIR += libbtree/sources
+SRCS			+= btree_apply_infix.c btree_apply_prefix.c btree_apply_suffix.c\
+ 							btree_create_node.c btree_destroy.c btree_insert_data.c\
+							 btree_level_count.c btree_print.c btree_search_item.c
 
 
-SRC = $(addprefix $(SRC_PATH)/, $(SRC_NAME))
-LIB = $(addprefix $(LIB_PATH)/, $(LIB_NAME))
-INC = $(addprefix $(INC_PATH)/, $(INC_NAME))
-OBJ = $(addprefix $(OBJ_PATH)/,$(OBJ_NAME))
-OBJLIB = $(addprefix $(OBJLIB_PATH)/,$(OBJLIB_NAME))
+###############################################################################
+
+#  Compiler
+
+NAME 			= libft.a
+CC				= clang
+CFLAGS		= -Wall -Wextra -Werror
+
+
+#The Directories, Source, Includes, Objects and Libraries
+INC			= -I includes -I sources/libbtree/includes
+SRCS_DIR	= sources
+vpath  %c $(addprefix $(SRCS_DIR)/,$(SRC_SUBDIR))
+
+#Objects
+OBJS_DIR	= objs
+ OBJS		= $(SRCS:%.c=$(OBJS_DIR)/%.o)
+
+BUILD_DIR	= $(OBJS_DIR) $(DEPS_DIR)
+
+#Utils
+RM					= rm -rf
+MKDIR				= mkdir -p
+
+COUNT = 0
+TOTAL = 100
+PERCENT = 0
+FILE = "toto"
+
+###############################################################################
+
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(OBJLIB)
-	@printf "\n$(C_B)%-20s\tCompilation\t$(C_G)[ OK ✔ ]$(C_NO)" $(PRINT)
-	@printf "\n$(C_Y)%-20s\tCompilation\t$(C_G)[ OK ✔ ]$(C_NO)" "lib_srcs"
-	@ar rc $(NAME) $(OBJ) $(OBJLIB)
+$(NAME): $(OBJS)
+	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	@printf "\n$(C_NO)%-20s\t$(C_R)Compilation\t$(C_G)[ OK ✔ ]$(C_NO)\n" $(NAME)
+	@echo -e "\n[\033[35m---------------------------------\033[0m]"
+	@echo -e "[\033[36m----------- Lib Done! -----------\033[0m]"
+	@echo -e "[\033[35m---------------------------------\033[0m]"
 
-$(OBJ_PATH)/%.o: $(SRC_PATH)/%.c
-	@mkdir -p $(OBJ_PATH)
-	@$(CC) -o $@ $(FLAGS) -c $< -I includes
-	@printf "$(C_B)█$(C_NO)"
+$(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)
+	@$(CC) $(CFLAGS) $(INC) -o $@ -c $<
+	$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
+	$(eval PERCENT=$(shell echo $$((($(COUNT) * 100 )/$(TOTAL)))))
+	@printf "$(C_B)%-8s $(C_Y) $<$(C_NO)                                           " "[$(PERCENT)%]"
+	@printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
 
-$(OBJLIB_PATH)/%.o: $(LIB_PATH)/%.c
-	@mkdir -p $(OBJLIB_PATH)
-	@$(CC) -o $@ $(FLAGS) -c $< -I includes
-	@printf "$(C_Y)█$(C_NO)"
+$(BUILD_DIR):
+	@$(MKDIR) $@
 
 clean:
-	@rm -rf $(OBJ) $(OBJLIB)
-	@rm -rf includes/libft.h.gch
-	@rm -rf includes/get_next_line.h.gch
-	@printf "$(C_B)%-20s\t$(C_Y)Cleaning obj\t$(C_G)[ OK ✔ ]$(C_NO)\n" $(NAME)
+	@echo -e "\033[35m$(NAME)  :\033[0m [\033[31mSuppression des .o\033[0m]"
+	@$(RM) $(OBJS_DIR)
 
 fclean: clean
-	@rm -rf ./obj $(NAME)
-	@rm -rf maintest
-	@printf "$(C_B)%-20s\t$(C_Y)Cleaning lib\t$(C_G)[ OK ✔ ]$(C_NO)\n" $(NAME)
+	@echo -e "\033[35m$(NAME)  :\033[0m [\033[31mSuppression de $(NAME)\033[0m]"
+	@$(RM) $(NAME)
 
 re: fclean all
-
-norme:
-		@norminette $(SRC) $(LIB) $(INC)
-		@printf "$(C_B)%-20s\t$(C_Y)Norminette\t$(C_G)[ OK ✔ ]$(C_NO)\n" $(NAME)
-
-main: $(NAME)
-	@$(CC) $(FLAGS) -o maintest main.c $(NAME) -I libft -I includes
-	@printf "$(C_B)%-20s\t$(C_Y)compilation\t$(C_G)[ OK ✔ ]$(C_NO)\n" "maintest"
