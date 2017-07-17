@@ -1,41 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strstr.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/09 14:20:24 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/06/16 15:29:54 by gpouyat          ###   ########.fr       */
+/*   Created: 2016/11/03 22:17:11 by gpouyat           #+#    #+#             */
+/*   Updated: 2017/07/17 15:52:29 by guiforge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strstr(const char *big, const char *little)
+char	*ft_strdup(const char *str)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	temp;
+	char	*s2;
 
-	i = 0;
-	j = 0;
-	if (!big || !little)
-		return (NULL)
-	if (little[0] == '\0')
-		return ((char *)big);
-	while (big[i])
-	{
-		j = 0;
-		temp = i;
-		while (big[temp] == little[j] && big[temp] && little[j])
-		{
-			temp++;
-			j++;
-			if (little[j] == '\0')
-				return ((char *)(&big[i]));
-		}
-		i++;
-	}
-	return (NULL);
+	s2 = ft_strnew(ft_strlen(str));
+	if (s2 == NULL)
+		return (NULL);
+	else
+		return (ft_strcpy(s2, str));
 }

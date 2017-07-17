@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/03 22:17:11 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/06/16 15:21:20 by gpouyat          ###   ########.fr       */
+/*   Created: 2016/11/02 21:22:16 by gpouyat           #+#    #+#             */
+/*   Updated: 2017/07/17 15:51:15 by guiforge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_strdup(const char *str)
+size_t	ft_strlen(const char *str)
 {
-	char	*s2;
+	int		i;
 
-	s2 = ft_strnew(ft_strlen(str));
-	if (s2 == NULL)
-		return (NULL);
-	else
-		return (ft_strcpy(s2, str));
+	i = 0;
+	while (str && str[i])
+		i = i + 1;
+	return (i);
 }

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 13:14:03 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/06/16 15:26:42 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/07/17 15:53:26 by guiforge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 char	*ft_strjoincl(char *s1, char const *s2, int free)
 {
-	ft_strjoin(s1, s2);
+	char	*ret;
+
+	ret = ft_strjoin(s1, s2);
 	((free == 1 || free == 3) && s1) ? ft_fri((char **)&s1) : 0;
 	((free == 2 || free == 3) && s2) ? ft_fri((char **)&s2) : 0;
+	return (ret);
 }

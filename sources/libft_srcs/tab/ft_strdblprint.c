@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdblprint.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 21:22:16 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/06/16 15:29:03 by gpouyat          ###   ########.fr       */
+/*   Created: 2017/06/16 15:32:42 by gpouyat           #+#    #+#             */
+/*   Updated: 2017/07/17 16:02:31 by guiforge         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *str)
+void	ft_strdblprint(char **tab)
 {
-	int		i;
+	int i;
 
 	i = 0;
-	while (s && str[i])
-		i = i + 1;
-	return (i);
+	if (!tab)
+		return
+	ft_putstr("Array{");
+	while(tab[i])
+	{
+		ft_printf("[%d] = %s\n", i, tab[i]);
+		i++;
+	}
+	ft_putstr("     }");
 }
