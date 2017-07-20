@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/06/16 15:36:49 by gpouyat          ###   ########.fr       */
+/*   Updated: 2017/07/20 20:00:35 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,6 +85,7 @@ void				ft_lstaddnew(t_list **list, void const *content,
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *nw);
+void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 
 /*
 ** TAB FUNCTION
@@ -167,7 +168,6 @@ void				*ft_memcpy(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t n);
 void				ft_bzero(void *s, size_t n);
-void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
 size_t				ft_strlen(const char *str);
