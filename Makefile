@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2017/07/17 17:21:35 by guiforge         ###   ########.fr        #
+#    Updated: 2017/07/21 00:50:37 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,10 @@ SRC_SUBDIR += print_srcs
 SRCS			+= convers.c  display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
 							type_of_number.c
 
+SRC_SUBDIR += ft_secu_malloc
+SRCS			+= ft_secu_free_all.c ft_secu_free.c ft_secu_malloc.c\
+ 							ft_secu_malloc_get.c 
+
 SRC_SUBDIR += libbtree/sources
 SRCS			+= btree_apply_infix.c btree_apply_prefix.c btree_apply_suffix.c\
  							btree_create_node.c btree_destroy.c btree_insert_data.c\
@@ -102,10 +106,9 @@ RM					= rm -rf
 MKDIR				= mkdir -p
 
 COUNT = 0
-TOTAL = 100
+TOTAL = 0
 PERCENT = 0
-FILE = "toto"
-
+$(eval TOTAL=$(shell echo $$(printf "%s" "$(SRCS)" | wc -w)))
 ###############################################################################
 
 
