@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2017/07/21 00:50:37 by gpouyat          ###   ########.fr        #
+#    Updated: 2017/07/21 12:56:51 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -73,7 +73,7 @@ SRCS			+= convers.c  display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
 
 SRC_SUBDIR += ft_secu_malloc
 SRCS			+= ft_secu_free_all.c ft_secu_free.c ft_secu_malloc.c\
- 							ft_secu_malloc_get.c 
+ 							ft_secu_malloc_get.c ft_secu_malloc_lvl.c ft_secu_free_lvl.c
 
 SRC_SUBDIR += libbtree/sources
 SRCS			+= btree_apply_infix.c btree_apply_prefix.c btree_apply_suffix.c\
