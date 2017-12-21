@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2017/07/21 12:56:51 by gpouyat          ###   ########.fr        #
+#    Updated: 2017/12/21 19:57:52 by guiforge         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,11 +71,10 @@ SRC_SUBDIR += print_srcs
 SRCS			+= convers.c  display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
 							type_of_number.c
 
-SRC_SUBDIR += ft_secu_malloc
-SRCS			+= ft_secu_free_all.c ft_secu_free.c ft_secu_malloc.c\
- 							ft_secu_malloc_get.c ft_secu_malloc_lvl.c ft_secu_free_lvl.c
+SRC_SUBDIR += secure_memory
+SRCS			+= ft_secu_free.c ft_secu_malloc.c
 
-SRC_SUBDIR += libbtree/sources
+SRC_SUBDIR += btree
 SRCS			+= btree_apply_infix.c btree_apply_prefix.c btree_apply_suffix.c\
  							btree_create_node.c btree_destroy.c btree_insert_data.c\
 							 btree_level_count.c btree_print.c btree_search_item.c
@@ -89,9 +88,16 @@ NAME 			= libft.a
 CC				= clang
 CFLAGS		= -Wall -Wextra -Werror
 
+ifeq ($(DEV),yes)
+    CFLAGS		+= -g
+endif
+
+ifeq ($(SAN),yes)
+    CFLAGS		+= -fsanitize=address -fno-omit-frame-pointer -fno-optimize-sibling-calls
+endif
 
 #The Directories, Source, Includes, Objects and Libraries
-INC			= -I includes -I sources/libbtree/includes
+INC			= -I includes -I includes/intern
 SRCS_DIR	= sources
 vpath  %c $(addprefix $(SRCS_DIR)/,$(SRC_SUBDIR))
 
@@ -117,26 +123,26 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
-	@echo -e "\n[\033[35m---------------------------------\033[0m]"
-	@echo -e "[\033[36m----------- Lib Done! -----------\033[0m]"
-	@echo -e "[\033[35m---------------------------------\033[0m]"
+	@echo
+	@echo "[\033[35m---------------------------------\033[0m]"
+	@echo "[\033[36m----------- Lib Done! -----------\033[0m]"
+	@echo "[\033[35m---------------------------------\033[0m]"
 
 $(OBJS_DIR)/%.o: %.c | $(OBJS_DIR)
 	@$(CC) $(CFLAGS) $(INC) -o $@ -c $<
 	$(eval COUNT=$(shell echo $$(($(COUNT)+1))))
 	$(eval PERCENT=$(shell echo $$((($(COUNT) * 100 )/$(TOTAL)))))
-	@printf "$(C_B)%-8s $(C_Y) $<$(C_NO)                                           " "[$(PERCENT)%]"
-	@printf "\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b\b"
+	@printf "$(C_B)%-8s $(C_Y) $<$(C_NO)                                           \n" "[$(PERCENT)%]"
 
 $(BUILD_DIR):
 	@$(MKDIR) $@
 
 clean:
-	@echo -e "\033[35m$(NAME)  :\033[0m [\033[31mSuppression des .o\033[0m]"
+	@echo "\033[35m$(NAME)  :\033[0m [\033[31mSuppression des .o\033[0m]"
 	@$(RM) $(OBJS_DIR)
 
 fclean: clean
-	@echo -e "\033[35m$(NAME)  :\033[0m [\033[31mSuppression de $(NAME)\033[0m]"
+	@echo "\033[35m$(NAME)  :\033[0m [\033[31mSuppression de $(NAME)\033[0m]"
 	@$(RM) $(NAME)
 
 re: fclean all
