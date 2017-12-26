@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/12/21 19:36:58 by guiforge         ###   ########.fr       */
+/*   Updated: 2017/12/26 18:32:14 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -162,5 +162,7 @@ char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_strsplit(char const *s, char c);
+
+ssize_t			ft_next_multiple(ssize_t	number, size_t divisor);
 
 #endif
