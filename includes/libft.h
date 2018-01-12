@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/12/26 18:32:14 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/01/11 19:10:24 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,6 +95,8 @@ void				ft_putendl(char const *str);
 void				ft_putendl_fd(char const *str, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
+void				ft_putsize_t_base_fd(size_t number, unsigned int base, int fd);
+void				ft_putnbr_base_fd(unsigned int number, unsigned int base, int fd);
 void				ft_putstr(char const *str);
 void				ft_putstr_fd(char const *str, int fd);
 void				ft_putchar_fd(char c, int fd);

@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2017/12/26 18:31:16 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/01/11 19:12:05 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,8 @@ SRCS			+= ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c ft_isprint.c\
 
 SRC_SUBDIR += libft_srcs/string/put
 SRCS			+= ft_putchar.c ft_putchar_fd.c ft_putendl.c ft_putendl_fd.c\
- 							ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c
+ 							ft_putnbr.c ft_putnbr_fd.c ft_putstr.c ft_putstr_fd.c \
+							ft_putsize_t_base_fd.c ft_putnbr_base.c
 
 SRC_SUBDIR += libft_srcs/string/useMalloc
 SRCS			+= ft_itoa_base.c ft_itoa.c ft_replace.c ft_strdup.c ft_strjoin.c\
