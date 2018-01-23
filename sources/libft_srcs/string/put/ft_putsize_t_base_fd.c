@@ -6,13 +6,13 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 18:33:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/01/11 19:11:26 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/01/23 12:15:33 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static char base_ref[18] = {
+static char base_ref[16] = {
 	'0',
 	'1',
 	'2',
@@ -25,8 +25,6 @@ static char base_ref[18] = {
 	'9',
 	'A',
 	'B',
-	'C',
-	'D',
 	'C',
 	'D',
 	'E',
