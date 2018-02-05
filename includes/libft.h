@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/01/11 19:10:24 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/02/05 11:55:09 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@
 # include <limits.h>
 # include <errno.h>
 # include <stdio.h>
-# include "intern/get_next_line.h"
-# include "intern/ft_printf.h"
-# include "intern/ft_btree.h"
-# include "intern/secure_memory.h"
-# include "intern/color.h"
+# include "./intern/get_next_line.h"
+# include "./intern/ft_printf.h"
+# include "./intern/ft_btree.h"
+# include "./intern/secure_memory.h"
+# include "./intern/color.h"
 
 typedef struct		s_list
 {

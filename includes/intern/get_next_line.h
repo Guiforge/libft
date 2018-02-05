@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:27:19 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/02/28 09:41:17 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/02/05 11:55:17 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define BUFF_SIZE 10
 
-# include "libft.h"
+# include "../libft.h"
 # include <unistd.h>
 
 int		get_next_line(const int fd, char **line);
