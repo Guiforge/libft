@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 08:41:51 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/04/24 08:55:24 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/04/24 09:31:04 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,21 +30,19 @@ static t_flags	zero(t_flags flags)
 	return (flags);
 }
 
-static int		ret(int len, char *format, va_list ap, int fd)
+static int		ret(int len, char *format, int fd)
 {
 	int		i;
 
 	format = pf_couleur(format);
 	ft_putstr_fd(format, fd);
-	va_end(ap);
 	i = ft_strlen(format);
 	free(format);
 	return (i + len);
 }
 
-int				print(int fd, char *frmt, ...)
+int				print(int fd, char *frmt, va_list ap)
 {
-	va_list		ap;
 	t_flags		flags;
 	int			i;
 	char		*format;
@@ -53,7 +51,6 @@ int				print(int fd, char *frmt, ...)
 	format = ft_strdup(frmt);
 	i = 0;
 	len = 0;
-	va_start(ap, frmt);
 	while (format && format[i])
 	{
 		if (format[i] == '%')
@@ -68,5 +65,5 @@ int				print(int fd, char *frmt, ...)
 		}
 		i++;
 	}
-	return (ret(len, format, ap, fd));
+	return (ret(len, format, fd));
 }
