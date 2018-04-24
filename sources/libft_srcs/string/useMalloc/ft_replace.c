@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 12:10:42 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/07/17 16:02:07 by guiforge         ###   ########.fr       */
+/*   Updated: 2018/04/24 08:52:17 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,8 @@ char	*ft_replace(char *src1, char *src2, int index, int size)
 
 	if (ft_replace_init(src1, index, size))
 		return (NULL);
-	begin = ft_strnew((index + 1));
+	if((begin = ft_strnew((index + 1))) == NULL)
+		return (NULL);
 	begin = ft_strncpy(begin, src1, index);
 	end = ft_strjoin(src2, &src1[index + size]);
 	ret = ft_strjoin(begin, end);

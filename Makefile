@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2018/01/11 19:12:05 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/04/24 08:54:16 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,7 +70,7 @@ SRCS			+= get_next_line.c ft_next_multiple.c
 
 SRC_SUBDIR += print_srcs
 SRCS			+= convers.c  display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
-							type_of_number.c
+							type_of_number.c color.c ft_dprintf.c print.c
 
 SRC_SUBDIR += secure_memory
 SRCS			+= ft_secu_free.c ft_secu_malloc.c
