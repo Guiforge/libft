@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 15:01:10 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/04/29 18:39:19 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/04/29 20:20:28 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ static int		ft_getopt_check(char search, const char *opstring)
 	int index;
 
 	index = -1;
-	while(opstring && opstring[index++])
+	while(opstring && opstring[++index])
 		if (opstring[index] == search)
 			return (opstring[index + 1] == ':');
 
