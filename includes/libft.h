@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/02/05 11:55:09 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/04/29 15:37:03 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,5 +166,6 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_strsplit(char const *s, char c);
 
 ssize_t			ft_next_multiple(ssize_t	number, size_t divisor);
+int				ft_getopt(int argc, char const *argv[], const char *optstring);
 
 #endif
