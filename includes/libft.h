@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/05/10 12:19:29 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/05/10 12:25:35 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ typedef struct		s_list
 
 typedef	enum		s_bool
 {
-	True = true;
-	False = false;
+	True = 1,
+	False = 0,
 }					t_bool;
 
 /*
