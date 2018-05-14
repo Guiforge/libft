@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/05/10 14:12:10 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/05/10 17:41:41 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,8 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *nw);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstpush(t_list *alst, t_list *new);
+void				ft_lstpush(t_list **alst, t_list *new);
+void				ft_lstpush_new(t_list **alst, void const *content, size_t content_size);
 
 /*
 ** TAB FUNCTION
