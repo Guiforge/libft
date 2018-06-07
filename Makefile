@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2018/05/10 14:14:06 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/06/07 17:51:54 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ SRCS			+= error.c over_p_str.c over_p.c over_str.c over.c
 
 SRC_SUBDIR += libft_srcs/list
 SRCS			+= ft_lstadd.c ft_lstdel.c ft_lstdelone.c ft_lstfree.c ft_lstiter.c\
- 							ft_lstmap.c ft_lstnew.c ft_lstpush.c
+ 							ft_lstmap.c ft_lstnew.c ft_lstpush.c ft_lstremove.c ft_lstsort.c
 
 SRC_SUBDIR += libft_srcs/string
 SRCS			+= ft_atoi_base.c ft_atoi.c ft_strcat.c ft_strchr.c ft_strcpy.c\

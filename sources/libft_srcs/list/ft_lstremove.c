@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstpush.c                                       :+:      :+:    :+:   */
+/*   ft_lstremove.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/05/10 13:20:28 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/06/07 18:10:29 by gpouyat          ###   ########.fr       */
+/*   Created: 2018/06/07 17:46:59 by gpouyat           #+#    #+#             */
+/*   Updated: 2018/06/07 18:10:09 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstpush(t_list **alst, t_list *new)
+void ft_lstremove(t_list **lst, t_list *removed)
 {
-	t_list	*tmp;
-
-	tmp = *alst;
-	while (tmp && tmp->next)
-		tmp = tmp->next;
-	if (tmp)
-	{
-		tmp->next = new;
-		new->prev = tmp;
-		new->next = NULL;
-	}
-	else
-		*alst = new;
-}
-
-void	ft_lstpush_new(t_list **alst, void const *content, size_t content_size)
-{
-	t_list	*new;
-
-	new = ft_lstnew(content, content_size);
-	ft_lstpush(alst, new);
+    if (!lst || !removed)
+        return ;
+    if (removed->prev)
+    {
+        (removed->prev)->next = removed->next;
+        if (removed->next)
+            removed->next->prev = removed->prev;
+    }
+    else
+    {
+        *lst = removed->next;
+        if (removed->next)
+            (removed->next)->prev = NULL;
+    }
+    removed->next = NULL;
+    removed->prev = NULL;
 }

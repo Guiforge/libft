@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 16:40:20 by gpouyat           #+#    #+#             */
-/*   Updated: 2016/11/14 18:50:34 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/06/07 17:41:05 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,6 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 		list->content_size = content_size;
 	}
 	list->next = NULL;
+	list->prev = NULL;
 	return (list);
 }

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/05/10 17:41:41 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/06/07 17:50:30 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ typedef struct		s_list
 	void			*content;
 	size_t			content_size;
 	struct s_list	*next;
+	struct s_list	*prev;
 }					t_list;
 
 typedef	enum		s_bool
@@ -65,6 +66,8 @@ void				ft_lstadd(t_list **alst, t_list *nw);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstpush(t_list **alst, t_list *new);
 void				ft_lstpush_new(t_list **alst, void const *content, size_t content_size);
+void				ft_lstremove(t_list **lst, t_list *removed);
+void				ft_lstsort(t_list **lst, int (*sort)(t_list *a, t_list *b));
 
 /*
 ** TAB FUNCTION
