@@ -6,11 +6,11 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2018/09/26 13:14:28 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/09/26 13:41:20 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-.NOTPARALLEL:
+# .NOTPARALLEL:
 
 .PHONY: all clean fclean re
 
