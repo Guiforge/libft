@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/06/22 11:56:15 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/09/26 13:13:54 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,7 +180,9 @@ char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_strsplit(char const *s, char c);
 
-ssize_t			ft_next_multiple(ssize_t	number, size_t divisor);
-int				ft_getopt(int argc, char const *argv[], const char *optstring);
+size_t				ft_align(size_t number, size_t divider);
+size_t				ft_align4(size_t number);
+ssize_t				ft_next_multiple(ssize_t	number, size_t divisor);
+int					ft_getopt(int argc, char const *argv[], const char *optstring);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2018/06/07 17:51:54 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/09/26 13:14:28 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,7 +66,7 @@ SRCS			+= ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c\
  							ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c
 
 SRC_SUBDIR += libft_srcs
-SRCS			+= get_next_line.c ft_next_multiple.c ft_getopt.c
+SRCS			+= get_next_line.c ft_next_multiple.c ft_getopt.c ft_align.c
 
 SRC_SUBDIR += print_srcs
 SRCS			+= convers.c  display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
