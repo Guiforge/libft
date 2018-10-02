@@ -6,13 +6,13 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 19:07:41 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/06/22 11:56:28 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/02 11:28:20 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <libft.h>
 
-static char base_up[16] = {
+static char	g_base_up[16] = {
 	'0',
 	'1',
 	'2',
@@ -31,7 +31,7 @@ static char base_up[16] = {
 	'F'
 };
 
-static char base_low[16] = {
+static char	g_base_low[16] = {
 	'0',
 	'1',
 	'2',
@@ -50,7 +50,8 @@ static char base_low[16] = {
 	'f'
 };
 
-static void	ft_putnbr_base_fd_up(unsigned int number, unsigned int base, int fd, t_bool up)
+static void	ft_putnbr_base_fd_up(unsigned int number, unsigned int base,
+				int fd, t_bool up)
 {
 	char	c;
 
@@ -63,17 +64,17 @@ static void	ft_putnbr_base_fd_up(unsigned int number, unsigned int base, int fd,
 	}
 	if (number < (size_t)base)
 	{
-		c = up ? base_up[number] : base_low[number];
+		c = up ? g_base_up[number] : g_base_low[number];
 		ft_putchar_fd(c, fd);
 	}
 }
 
-void	ft_putnbr_base_fd(unsigned int number, unsigned int base, int fd)
+void		ft_putnbr_base_fd(unsigned int number, unsigned int base, int fd)
 {
 	ft_putnbr_base_fd_up(number, base, fd, True);
 }
 
-void	ft_putnbr_base_fd_low(unsigned int number, unsigned int base, int fd)
+void		t_putnbr_base_fd_low(unsigned int number, unsigned int base, int fd)
 {
 	ft_putnbr_base_fd_up(number, base, fd, False);
 }

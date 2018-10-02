@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/16 14:12:55 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/06/16 14:26:28 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/02 11:25:20 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ int	ft_str_isvalue(char *s)
 	int		i;
 
 	i = 0;
-
 	if (!s)
 		return (0);
 	if (ft_str_isdigit(s) ||

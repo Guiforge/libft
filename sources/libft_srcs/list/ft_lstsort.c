@@ -6,13 +6,13 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/06/07 17:32:43 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/06/09 21:43:39 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/02 11:24:48 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void ft_lstsort(t_list **lst, t_bool (*sort)(t_list *a, t_list *b))
+void	ft_lstsort(t_list **lst, t_bool (*sort)(t_list *a, t_list *b))
 {
 	t_list	*new_lst;
 	t_list	*smaller;
@@ -25,7 +25,7 @@ void ft_lstsort(t_list **lst, t_bool (*sort)(t_list *a, t_list *b))
 	{
 		index = *lst;
 		smaller = *lst;
-		while(index)
+		while (index)
 		{
 			if (!sort(smaller, index))
 				smaller = index;
@@ -37,13 +37,13 @@ void ft_lstsort(t_list **lst, t_bool (*sort)(t_list *a, t_list *b))
 	*lst = new_lst;
 }
 
-void ft_lstsortrev(t_list **lst, t_bool (*sort)(t_list *a, t_list *b))
+void	ft_lstsortrev(t_list **lst, t_bool (*sort)(t_list *a, t_list *b))
 {
 	ft_lstsort(lst, sort);
 	ft_lstrev(lst);
 }
 
-void ft_lstrev(t_list **lst)
+void	ft_lstrev(t_list **lst)
 {
 	t_list	*new;
 	t_list	*tmp;

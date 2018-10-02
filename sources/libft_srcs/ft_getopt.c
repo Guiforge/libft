@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 15:01:10 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/04/29 20:20:28 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/02 11:22:20 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@ int		g_optopt;
 
 static int		ft_getopt_init(int argc, char const *argv[])
 {
-		if (argc <= g_optind || ft_strequ(argv[g_optind], "--") || *argv[g_optind] != '-')
-			return (-1);
+	if (argc <= g_optind || ft_strequ(argv[g_optind], "--") ||
+		*argv[g_optind] != '-')
+		return (-1);
 	return (0);
 }
 
-static char ft_getopt_current(char **next, const char **argv)
+static char		ft_getopt_current(char **next, const char **argv)
 {
 	char	ret;
 
@@ -36,8 +37,8 @@ static char ft_getopt_current(char **next, const char **argv)
 	if (!**next)
 		g_optind++;
 	g_optopt = ret;
-	g_optarg = NULL;	
-	return(ret);
+	g_optarg = NULL;
+	return (ret);
 }
 
 static int		ft_getopt_check(char search, const char *opstring)
@@ -45,23 +46,22 @@ static int		ft_getopt_check(char search, const char *opstring)
 	int index;
 
 	index = -1;
-	while(opstring && opstring[++index])
+	while (opstring && opstring[++index])
 		if (opstring[index] == search)
 			return (opstring[index + 1] == ':');
-
 	return (-1);
 }
 
-static int ft_getopt_error(const char *prgm, char current, int err)
+static int		ft_getopt_error(const char *prgm, char current, int err)
 {
 	char current_str[2];
-	
+
 	current_str[0] = current;
-	current_str[1] = 0;	
-	ft_putstr_fd(prgm, STDERR_FILENO);	
+	current_str[1] = 0;
+	ft_putstr_fd(prgm, STDERR_FILENO);
 	if (err == FT_GETOPT_OPT_REQ)
 	{
-		over_p_str(": option requires an argument --", current_str);	
+		over_p_str(": option requires an argument --", current_str);
 	}
 	else if (err == FT_GETOPT_INV_OPT)
 	{
@@ -70,11 +70,11 @@ static int ft_getopt_error(const char *prgm, char current, int err)
 	return ((int)'?');
 }
 
-int		ft_getopt(int argc, char const *argv[], const char *optstring)
+int				ft_getopt(int argc, char const *argv[], const char *optstring)
 {
-static char *next = NULL;
-int			check;
-char		current;
+	static char	*next = NULL;
+	int			check;
+	char		current;
 
 	(void)optstring;
 	if (ft_getopt_init(argc, argv))
@@ -87,14 +87,14 @@ char		current;
 		{
 			if (*next)
 				g_optarg = next;
-			else if(argv[g_optind])
+			else if (argv[g_optind])
 				g_optarg = (char *)argv[g_optind];
 			else
-				return(ft_getopt_error(*argv, current, FT_GETOPT_OPT_REQ));
+				return (ft_getopt_error(*argv, current, FT_GETOPT_OPT_REQ));
 			next = NULL;
 			g_optind++;
 		}
 		return (g_optopt);
 	}
-	return(ft_getopt_error(*argv, current, FT_GETOPT_INV_OPT));
+	return (ft_getopt_error(*argv, current, FT_GETOPT_INV_OPT));
 }

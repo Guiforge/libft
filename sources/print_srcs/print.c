@@ -6,12 +6,11 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 08:41:51 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/04/24 09:31:04 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/02 11:30:46 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 static t_flags	zero(t_flags flags)
 {

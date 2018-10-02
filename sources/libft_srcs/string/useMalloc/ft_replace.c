@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 12:10:42 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/04/24 08:52:17 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/02 11:27:32 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_replace(char *src1, char *src2, int index, int size)
 
 	if (ft_replace_init(src1, index, size))
 		return (NULL);
-	if((begin = ft_strnew((index + 1))) == NULL)
+	if ((begin = ft_strnew((index + 1))) == NULL)
 		return (NULL);
 	begin = ft_strncpy(begin, src1, index);
 	end = ft_strjoin(src2, &src1[index + size]);
@@ -39,21 +39,3 @@ char	*ft_replace(char *src1, char *src2, int index, int size)
 	ft_fri(&src1);
 	return (ret);
 }
-
-/*#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-
-int main(int argc, char **argv)
-{
-	if (argc != 5)
-	{
-		printf("%s\n", "TOTO");
-		return (0);
-	}
-	char *source = strdup(argv[1]);
-	char *ret = strdup(argv[2]);
-
-	source = ft_replace(source, NULL, atoi(argv[3]), atoi(argv[4]));
-	printf("source=%s, ret=%s, result = %s\n", argv[1], ret, source);
-}*/

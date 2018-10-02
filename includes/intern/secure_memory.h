@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 19:56:25 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/12/21 19:39:36 by guiforge         ###   ########.fr       */
+/*   Updated: 2018/10/02 11:11:06 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 # define SECURE_MEMORY_H
 
 # include <stdlib.h>
-#include <sys/types.h>
-#include <signal.h>
+# include <sys/types.h>
+# include <signal.h>
 
 # define MALLOC_LVL_DEFAULT 0
 # define M_LVL_FUNCT 1

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 08:39:39 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/04/24 08:54:51 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/02 11:30:57 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int				ft_dprintf(int fd, char *frmt, ...)
 {
-		va_list		list;
-		int			ret;
+	va_list		list;
+	int			ret;
 
 	ret = 0;
 	if (frmt)
@@ -24,5 +24,5 @@ int				ft_dprintf(int fd, char *frmt, ...)
 		ret = print(fd, frmt, list);
 		va_end(list);
 	}
-	return(ret);
+	return (ret);
 }

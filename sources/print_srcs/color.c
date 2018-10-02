@@ -6,12 +6,11 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 08:42:28 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/04/24 08:45:57 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/02 11:29:15 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
-
 
 static char			*replace_couleur(char *format, int i)
 {
@@ -36,7 +35,7 @@ static char			*replace_couleur(char *format, int i)
 	return (format);
 }
 
-char			*pf_couleur(char *format)
+char				*pf_couleur(char *format)
 {
 	int		i;
 

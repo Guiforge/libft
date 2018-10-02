@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/09/26 13:13:54 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/02 11:14:09 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef struct		s_list
 	struct s_list	*prev;
 }					t_list;
 
-typedef	enum		s_bool
+typedef	enum		e_bool
 {
 	True = 1,
 	False = 0,
@@ -56,7 +56,8 @@ void				exit_error(const char *progname, const char *error,
 ** LIST FUNCTION
 */
 t_list				*ft_lstnew(void const *content, size_t content_size);
-t_list				*ft_lstnew_secu(void const *content, size_t content_size, size_t lvl);
+t_list				*ft_lstnew_secu(void const *content, size_t content_size,
+						size_t lvl);
 t_list				*ft_lstmap(t_list *lst, t_list *(f)(t_list *elem));
 void				ft_lstsuppress(t_list *list);
 void				ft_lstaddnew(t_list **list, void const *content,
@@ -66,10 +67,13 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *nw);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstpush(t_list **alst, t_list *new);
-void				ft_lstpush_new(t_list **alst, void const *content, size_t content_size);
+void				ft_lstpush_new(t_list **alst, void const *content,
+						size_t content_size);
 void				ft_lstremove(t_list **lst, t_list *removed);
-void				ft_lstsort(t_list **lst, t_bool (*sort)(t_list *a, t_list *b));
-void				ft_lstsortrev(t_list **lst, t_bool (*sort)(t_list *a, t_list *b));
+void				ft_lstsort(t_list **lst, t_bool (*sort)(t_list *a,
+						t_list *b));
+void				ft_lstsortrev(t_list **lst, t_bool (*sort)(t_list *a,
+						t_list *b));
 void				ft_lstrev(t_list **lst);
 
 /*
@@ -109,9 +113,12 @@ void				ft_putendl(char const *str);
 void				ft_putendl_fd(char const *str, int fd);
 void				ft_putnbr(int n);
 void				ft_putnbr_fd(int n, int fd);
-void				ft_putsize_t_base_fd(size_t number, unsigned int base, int fd);
-void				ft_putnbr_base_fd(unsigned int number, unsigned int base, int fd);
-void				ft_putnbr_base_fd_low(unsigned int number, unsigned int base, int fd);
+void				ft_putsize_t_base_fd(size_t number, unsigned int base,
+						int fd);
+void				ft_putnbr_base_fd(unsigned int number, unsigned int base,
+						int fd);
+void				ft_putnbr_base_fd_low(unsigned int number,
+						unsigned int base, int fd);
 void				ft_putstr(char const *str);
 void				ft_putstr_fd(char const *str, int fd);
 void				ft_putchar_fd(char c, int fd);
@@ -183,6 +190,7 @@ char				**ft_strsplit(char const *s, char c);
 size_t				ft_align(size_t number, size_t divider);
 size_t				ft_align4(size_t number);
 ssize_t				ft_next_multiple(ssize_t	number, size_t divisor);
-int					ft_getopt(int argc, char const *argv[], const char *optstring);
+int					ft_getopt(int argc, char const *argv[],
+						const char *optstring);
 
 #endif

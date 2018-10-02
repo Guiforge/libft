@@ -6,13 +6,14 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/17 10:49:00 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/07/17 17:30:00 by guiforge         ###   ########.fr       */
+/*   Updated: 2018/10/02 11:16:06 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <ft_btree.h>
+#include <ft_btree.h>
 
-void	btree_insert_data(t_btree **root, void *item, int (*cmpf)(void *, void *))
+void	btree_insert_data(t_btree **root, void *item,
+			int (*cmpf)(void *, void *))
 {
 	if (!root)
 		return ;
