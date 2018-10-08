@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/01/11 19:07:41 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/02 11:28:20 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/08 16:49:42 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ void		ft_putnbr_base_fd(unsigned int number, unsigned int base, int fd)
 	ft_putnbr_base_fd_up(number, base, fd, True);
 }
 
-void		t_putnbr_base_fd_low(unsigned int number, unsigned int base, int fd)
+void		ft_putnbr_base_fd_low(unsigned int number, unsigned int base,
+																		int fd)
 {
 	ft_putnbr_base_fd_up(number, base, fd, False);
 }

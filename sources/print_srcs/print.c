@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 08:41:51 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/02 11:30:46 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/08 16:51:26 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,11 @@ int				print(int fd, char *frmt, va_list ap)
 	char		*format;
 	int			len;
 
-	format = ft_strdup(frmt);
+	if (!(format = ft_strdup(frmt)))
+	{
+		ft_putendl_fd("Printf ERROR Malloc\n", STDERR_FILENO);
+		return(0);
+	}
 	i = 0;
 	len = 0;
 	while (format && format[i])
