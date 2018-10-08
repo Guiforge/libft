@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 19:56:25 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/02 11:11:06 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/08 16:54:56 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # define M_LVL_HIST 5
 # define M_LVL_AUTOC 6
 # define M_LVL_PARSER 7
+# define M_LVL_OFFSET 7
 
 /*
 ** @file   secure_memory.h
