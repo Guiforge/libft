@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 08:41:51 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/08 16:51:26 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/08 18:24:00 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ static int		ret(int len, char *format, int fd)
 	return (i + len);
 }
 
+static int		chech_error_malloc(char *format)
+{
+	ft_putendl_fd("Printf ERROR Malloc\n", STDERR_FILENO);
+	return (0);
+}
+
 int				print(int fd, char *frmt, va_list ap)
 {
 	t_flags		flags;
@@ -48,10 +54,7 @@ int				print(int fd, char *frmt, va_list ap)
 	int			len;
 
 	if (!(format = ft_strdup(frmt)))
-	{
-		ft_putendl_fd("Printf ERROR Malloc\n", STDERR_FILENO);
-		return(0);
-	}
+		return (chech_error_malloc(format));
 	i = 0;
 	len = 0;
 	while (format && format[i])
