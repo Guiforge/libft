@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/02 11:14:09 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/10 12:56:19 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,8 @@ void				ft_lstsort(t_list **lst, t_bool (*sort)(t_list *a,
 void				ft_lstsortrev(t_list **lst, t_bool (*sort)(t_list *a,
 						t_list *b));
 void				ft_lstrev(t_list **lst);
+void				ft_lstpush_new_secu(t_list **alst, void const *content,
+						size_t content_size, size_t lvl);
 
 /*
 ** TAB FUNCTION

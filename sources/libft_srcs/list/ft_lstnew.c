@@ -6,11 +6,11 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 16:40:20 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/02 11:24:12 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/10 12:54:32 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../../includes/libft.h"
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {

@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2018/09/26 13:41:20 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/10/10 12:51:30 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -78,7 +78,8 @@ SRCS			+= ft_secu_free.c ft_secu_malloc.c
 SRC_SUBDIR += btree
 SRCS			+= btree_apply_infix.c btree_apply_prefix.c btree_apply_suffix.c\
  							btree_create_node.c btree_destroy.c btree_insert_data.c\
-							 btree_level_count.c btree_print.c btree_search_item.c
+							btree_level_count.c btree_print.c btree_search_item.c\
+							ft_strnew_secu.c ft_strdup_secu.c
 
 
 ###############################################################################

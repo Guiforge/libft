@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 19:56:25 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/08 16:54:56 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/10 13:03:40 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,4 +93,6 @@ void							*secu_malloc(size_t size);
 void							*ft_secu_malloc_lvl(size_t size, size_t lvl);
 t_mem							*get_mem(void);
 
+char							*ft_strdup_secu(const char *str, size_t lvl);
+char							*ft_strnew_secu(size_t size, size_t lvl);
 #endif

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 15:01:10 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/09 13:03:13 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/10 13:04:08 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ static int		ft_getopt_init(int argc, char const *argv[])
 		g_optind++;
 		return (-1);
 	}
-
 	if (argc <= g_optind || *argv[g_optind] != '-')
 		return (-1);
 	return (0);
