@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 16:52:58 by gpouyat           #+#    #+#             */
-/*   Updated: 2016/11/08 19:31:45 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:09:34 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ char	*ft_strcat(char *dest, const char *src)
 
 	i = 0;
 	a = 0;
+	if (!dest || !src)
+		return (NULL);
 	while (dest[i])
 		i = i + 1;
 	while (src[a])

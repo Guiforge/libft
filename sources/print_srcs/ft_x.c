@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/23 15:20:22 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/02/04 09:22:11 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:20:03 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 static char	*next_x(t_flags flags, char *tmp)
 {
+	if (!tmp)
+		return (NULL);
 	if (ft_atoi_base(tmp, 16) < 0 && !flags.type[0] && ft_strlen(tmp) == 16)
 		tmp = ft_replace(tmp, "", 0, 8);
 	else if (ft_atoi_base(tmp, 16) < 0 && flags.type[0] == 'h' &&\
@@ -32,6 +34,8 @@ char		*ft_x(t_flags flags, char *format, va_list ap, int **i)
 	char	*tmp;
 	char	*tmp2;
 
+	if (!format || !i || !*i)
+		return (NULL);
 	tmp = pf_itoa_base(ft_tnum(flags, ap), 16);
 	tmp = next_x(flags, tmp);
 	tmp2 = preci(flags, tmp);

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/24 08:41:51 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/09 09:28:22 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 12:28:06 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ static int		ret(int len, char *format, int fd)
 	int		i;
 
 	format = pf_couleur(format);
+	if (!format)
+		return (len);
 	ft_putstr_fd(format, fd);
 	i = ft_strlen(format);
 	free(format);

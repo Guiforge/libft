@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpouyat <gpouyat@42gmail.com>              +#+  +:+       +#+        */
+/*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/08 18:12:06 by gpouyat           #+#    #+#             */
-/*   Updated: 2016/11/11 16:05:55 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:30:34 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n)
 	size_t	i;
 
 	i = 0;
+	if (!s1 && !s2)
+		return (0);
+	else if (!s1)
+		return (0 - ((unsigned char *)s2)[0]);
+	else if (!s2)
+		return (((unsigned char *)s1)[0]);
 	if (n == 0)
 		return (0);
 	if (s1 && s2)

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/12 16:40:20 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/10 12:54:32 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 12:16:41 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		list->content = malloc(sizeof(content) * content_size);
 		if (list->content == NULL)
+		{
+			free(list);
 			return (NULL);
+		}
 		ft_memcpy(list->content, content, content_size);
 		list->content_size = content_size;
 	}
@@ -53,7 +56,10 @@ t_list	*ft_lstnew_secu(void const *content, size_t content_size, size_t lvl)
 	{
 		list->content = ft_secu_malloc_lvl(sizeof(content) * content_size, lvl);
 		if (list->content == NULL)
+		{
+			ft_secu_free(list);
 			return (NULL);
+		}
 		ft_memcpy(list->content, content, content_size);
 		list->content_size = content_size;
 	}

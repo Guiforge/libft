@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 19:57:29 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/12/21 19:53:53 by guiforge         ###   ########.fr       */
+/*   Updated: 2018/10/11 14:41:38 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,15 @@ void			*ft_secu_malloc_lvl(size_t size, size_t lvl)
 	if (!mem ||
 		!(secu_malloc = (t_secu_malloc*)ft_memalloc(sizeof(t_secu_malloc))))
 	{
-		exit_error("Malloc secu", "Malloc failed", 0, SIGINT);
+		over("Malloc secu: Malloc failed", 2);
 		return (NULL);
 	}
 	if (!(ptr = ft_memalloc(size)))
-		exit_error("Malloc secu", "Malloc failed", 0, SIGINT);
+	{
+		free(secu_malloc);
+		over("Malloc secu: Malloc failed", 2);
+		return (NULL);
+	}
 	secu_malloc->lvl = lvl;
 	secu_malloc->ptr = ptr;
 	secu_malloc->next = NULL;
@@ -92,7 +96,10 @@ t_mem			*get_mem(void)
 	if (mem == NULL)
 	{
 		if (!(mem = (t_mem *)ft_memalloc(sizeof(t_mem))))
-			exit_error("Malloc secu", "Malloc failed", 0, SIGINT);
+		{
+			over("Malloc secu: Malloc failed", 2);
+			return (NULL);
+		}
 		mem->first = NULL;
 		mem->last = NULL;
 	}

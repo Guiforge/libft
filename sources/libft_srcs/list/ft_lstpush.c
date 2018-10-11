@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/10 13:20:28 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/10 12:55:40 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 12:17:13 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ void	ft_lstpush_new(t_list **alst, void const *content, size_t content_size)
 	t_list	*new;
 
 	new = ft_lstnew(content, content_size);
-	ft_lstpush(alst, new);
+	if (new)
+		ft_lstpush(alst, new);
 }
 
 void	ft_lstpush_new_secu(t_list **alst, void const *content,
@@ -43,5 +44,6 @@ void	ft_lstpush_new_secu(t_list **alst, void const *content,
 	t_list	*new;
 
 	new = ft_lstnew_secu(content, content_size, lvl);
-	ft_lstpush(alst, new);
+	if (new)
+		ft_lstpush(alst, new);
 }

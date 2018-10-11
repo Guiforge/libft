@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/10 13:14:03 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/07/17 15:53:26 by guiforge         ###   ########.fr       */
+/*   Updated: 2018/10/11 12:19:52 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*tab;
 
+	if (!s1 || !s2)
+		return (NULL);
 	tab = ft_strnew(ft_strlen(s1) + ft_strlen(s2) + 1);
 	if (tab != NULL)
 	{

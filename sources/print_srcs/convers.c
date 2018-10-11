@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/10 07:42:13 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/02/04 09:22:42 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 13:55:01 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,13 @@ char	*ft_d(t_flags flags, char *format, va_list ap, int **i)
 	char	*tmp2;
 	int		base;
 
+	if (!format || !i || !*i)
+		return (NULL);
 	base = (flags.convers == 'b' ? 2 : 10);
 	tmp = (flags.plus ? (pf_itoa_plusbase(ft_tnum(flags, ap), base)) :
 					(pf_itoa_base(ft_tnum(flags, ap), base)));
+	if (!tmp)
+		return (NULL);
 	if (flags.preci == 0 && ft_atoi(tmp) == 0)
 		tmp = ft_replace(tmp, "", 0, 1);
 	tmp2 = preci(flags, tmp);
@@ -42,6 +46,8 @@ char	*ft_u(t_flags flags, char *format, va_list ap, int **i)
 	char	*tmp;
 	char	*tmp2;
 
+	if (!format || !i || !*i)
+		return (NULL);
 	if (flags.convers == 'U')
 	{
 		flags.type[0] = 'l';
@@ -49,7 +55,8 @@ char	*ft_u(t_flags flags, char *format, va_list ap, int **i)
 	}
 	tmp = pf_uitoa_base(ft_utnum(flags, ap), 10);
 	if (flags.preci == 0 && ft_atoi(tmp) == 0)
-		tmp = ft_replace(tmp, "", 0, 1);
+		if (!(tmp = ft_replace(tmp, "", 0, 1)))
+			return (NULL);
 	tmp2 = preci(flags, tmp);
 	free(tmp);
 	tmp = minus(flags, tmp2);

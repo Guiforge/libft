@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 13:58:39 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/09/27 16:24:03 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:24:30 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (NULL);
 	while (s[i])
 	{
 		if (s[i] == c)
@@ -33,6 +35,8 @@ int		ft_indexchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
+	if (!s)
+		return (0);
 	while (s[i])
 	{
 		if (s[i] == c)

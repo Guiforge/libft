@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 15:07:45 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/01/24 08:08:31 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:12:47 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	**tri_strdbl_r(char **str)
 
 	i = 0;
 	temp = NULL;
-	if (!str)
+	if (!str || !*str)
 		return (NULL);
 	while (str[i + 1])
 	{
@@ -44,7 +44,7 @@ char	**tri_strdbl(char **str)
 
 	i = 0;
 	temp = NULL;
-	if (!str)
+	if (!str || !*str)
 		return (NULL);
 	while (str[i + 1])
 	{

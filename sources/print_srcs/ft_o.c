@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/21 14:46:44 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/02/04 09:21:47 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:17:05 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*pfoitoa_short(short int nb, uintmax_t base)
 	if (num == 0)
 		return (ft_strdup("0"));
 	str = ft_strnew(nb_of_figure(num, base) + 2);
-	while (num)
+	while (str && num)
 	{
 		str[i] = ((num % base <= 9) ? num % base + '0' : num % base + 'A' - 10);
 		num = num / base;
@@ -57,7 +57,7 @@ char	*pfoitoa_char(char nb, uintmax_t base)
 	if (num == 0)
 		return (ft_strdup("0"));
 	str = ft_strnew(nb_of_figure(num, base) + 2);
-	while (num)
+	while (str && num)
 	{
 		str[i] = ((num % base <= 9) ? num % base + '0' : num % base + 'A' - 10);
 		num = num / base;

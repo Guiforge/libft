@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/08 10:30:41 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/01/24 08:07:40 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 12:20:20 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char		*rev(char *str)
 	i = ft_strlen(str);
 	rev = ft_strnew(i);
 	i--;
-	while (str[a])
+	while (rev && str[a])
 	{
 		rev[a] = str[i];
 		a++;

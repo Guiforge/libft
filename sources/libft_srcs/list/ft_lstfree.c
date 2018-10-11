@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/30 21:17:04 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/01/03 08:08:34 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 12:14:33 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,13 @@ void	ft_lstaddnew(t_list **list, void const *content, size_t content_size)
 	else
 	{
 		new = ft_lstnew(content, content_size);
-		new->next = *list;
-		*list = new;
+		if (new)
+		{
+			new->next = *list;
+			*list = new;
+		}
+		else
+			*list = NULL;
 	}
 }
 

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 17:58:37 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/02/04 09:22:22 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:56:19 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char			get_conver(char c)
 
 	i = 0;
 	tab = ft_strdup("sSpdDioOuUxXcCb%%");
-	while ((result = tab[i]))
+	while (tab && (result = tab[i]))
 	{
 		if (c == tab[i])
 		{
@@ -35,6 +35,8 @@ char			get_conver(char c)
 
 t_flags			get_type(char *format, t_flags flags)
 {
+	if (!format)
+		return (flags);
 	if (format[0] == 'z')
 		flags.type[0] = 'z';
 	else if (format[0] == 'j')
@@ -61,6 +63,8 @@ t_flags			get_type(char *format, t_flags flags)
 
 t_flags			get_flags(t_flags flags, char *format, int i)
 {
+	if (!format)
+		return (flags);
 	if (format[i] == '#')
 		flags.hash = 1;
 	else if (format[i] == ' ')
@@ -76,6 +80,8 @@ t_flags			get_flags(t_flags flags, char *format, int i)
 
 static t_flags	win_lines(t_flags flags, char *format, int i)
 {
+	if (!format)
+		return (flags);
 	flags.size = i;
 	flags.convers = get_conver(format[i]);
 	if (!flags.convers)
@@ -99,8 +105,10 @@ t_flags			get_struct(t_flags flags, char *format)
 	int	i;
 
 	i = 1;
-	while (format[i] == '#' || format[i] == ' ' || format[i] == '+'
-			|| format[i] == '-' || format[i] == '0')
+	if (!format)
+		return (flags);
+	while (format[i] && (format[i] == '#' || format[i] == ' '
+		|| format[i] == '+' || format[i] == '-' || format[i] == '0'))
 	{
 		flags = get_flags(flags, format, i);
 		i++;

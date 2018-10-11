@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 12:02:54 by gpouyat           #+#    #+#             */
-/*   Updated: 2016/11/10 14:46:20 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:25:21 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	unsigned int	j;
 
 	i = 0;
+	if (!dest || !src)
+		return (0);
 	while (dest[i] && i < size)
 		i++;
 	j = 0;

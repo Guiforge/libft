@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gpouyat <gpouyat@42gmail.com>              +#+  +:+       +#+        */
+/*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/07 19:47:37 by gpouyat           #+#    #+#             */
-/*   Updated: 2016/11/14 12:46:25 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:24:47 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strcpy(char *dest, const char *src)
 	int	count;
 
 	count = 0;
+	if (!dest || !src)
+		return (NULL);
 	while (src[count] != '\0')
 	{
 		dest[count] = src[count];

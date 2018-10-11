@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/06 15:00:56 by gpouyat           #+#    #+#             */
-/*   Updated: 2016/11/14 13:30:43 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/10/11 14:13:45 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
+	if (!dest || !src)
+		return (NULL);
 	if (dest < src)
 		return (ft_memcpy(dest, src, n));
 	else
