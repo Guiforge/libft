@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup_secu.c                                   :+:      :+:    :+:   */
+/*   ft_itochar.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/10 12:45:43 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/25 23:10:42 by gpouyat          ###   ########.fr       */
+/*   Created: 2018/12/25 20:33:12 by gpouyat           #+#    #+#             */
+/*   Updated: 2018/12/25 20:34:20 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*ft_strdup_secu(const char *str, size_t lvl)
+char	*ft_itochar(size_t size, const void *nb, t_bool is_little)
 {
-	char	*s2;
+	char	*ret;
 
-	s2 = ft_strnew_secu(ft_strlen(str), lvl);
-	if (s2 == NULL)
+	if (!(ret = ft_memalloc(size)))
 		return (NULL);
+	if (is_little)
+		ft_memcpy_swap(ret, nb, size);
 	else
-		return (ft_strcpy(s2, str));
+		ft_memcpy(ret, nb, size);
+	return (ret);
+}
+
+char	*ft_itochar_secu(size_t size, const void *nb, t_bool is_little, size_t lvl)
+{
+	char	*ret;
+
+	if (!(ret = ft_secu_malloc_lvl(size, lvl)))
+		return (NULL);
+	if (is_little)
+		ft_memcpy_swap(ret, nb, size);
+	else
+		ft_memcpy(ret, nb, size);
+	return (ret);
 }

@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2018/10/10 12:51:30 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/12/25 23:20:54 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -66,20 +66,25 @@ SRCS			+= ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c\
  							ft_memcpy.c ft_memdel.c ft_memmove.c ft_memset.c
 
 SRC_SUBDIR += libft_srcs
-SRCS			+= get_next_line.c ft_next_multiple.c ft_getopt.c ft_align.c
+SRCS			+= get_next_line.c ft_next_multiple.c ft_getopt.c ft_align.c \
+					ft_itochar.c
 
 SRC_SUBDIR += print_srcs
 SRCS			+= convers.c  display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
 							type_of_number.c color.c ft_dprintf.c print.c
 
 SRC_SUBDIR += secure_memory
-SRCS			+= ft_secu_free.c ft_secu_malloc.c
+SRCS			+= ft_secu_free.c ft_secu_malloc.c ft_strnew_secu.c ft_strdup_secu.c \
+					ft_secu_malloc_debug.c
 
 SRC_SUBDIR += btree
 SRCS			+= btree_apply_infix.c btree_apply_prefix.c btree_apply_suffix.c\
  							btree_create_node.c btree_destroy.c btree_insert_data.c\
 							btree_level_count.c btree_print.c btree_search_item.c\
-							ft_strnew_secu.c ft_strdup_secu.c
+
+
+SRC_SUBDIR += bits
+SRCS			+= b_print.c b_new.c b_dump.c b_clean.c b_join.c
 
 
 ###############################################################################

@@ -6,12 +6,11 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 19:57:29 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/11 14:41:38 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/12/25 23:10:37 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <secure_memory.h>
-#include <libft.h>
+#include "../../includes/libft.h"
 
 /*
 ** @brief Adds `secu_malloc` in `mem`
@@ -56,13 +55,13 @@ void			*ft_secu_malloc_lvl(size_t size, size_t lvl)
 	if (!mem ||
 		!(secu_malloc = (t_secu_malloc*)ft_memalloc(sizeof(t_secu_malloc))))
 	{
-		over("Malloc secu: Malloc failed", 2);
+		over("Malloc secu: Malloc failed (return NULL)", 2);
 		return (NULL);
 	}
 	if (!(ptr = ft_memalloc(size)))
 	{
 		free(secu_malloc);
-		over("Malloc secu: Malloc failed", 2);
+		over("Malloc secu: Malloc failed (return NULL)", 2);
 		return (NULL);
 	}
 	secu_malloc->lvl = lvl;

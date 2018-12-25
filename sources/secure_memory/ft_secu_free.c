@@ -6,12 +6,11 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 20:09:31 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/12/21 19:25:52 by guiforge         ###   ########.fr       */
+/*   Updated: 2018/12/25 23:19:58 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <secure_memory.h>
-#include <libft.h>
+#include "../../includes/libft.h"
 
 /*
 ** @brief Searches into memory for a pointer
@@ -55,8 +54,8 @@ void					ft_secu_free(void *ptr)
 		mem->last = secu_malloc->prev;
 	else
 		secu_malloc->next->prev = secu_malloc->prev;
-	free(secu_malloc->ptr);
-	free(secu_malloc);
+	ft_memdel(&secu_malloc->ptr);
+	ft_memdel((void **)&secu_malloc);
 }
 
 /*

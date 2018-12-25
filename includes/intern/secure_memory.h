@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 19:56:25 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/10 13:03:40 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/12/25 23:19:15 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,6 @@
 
 # define MALLOC_LVL_DEFAULT 0
 # define M_LVL_FUNCT 1
-# define M_LVL_AST 2
-# define M_LVL_EXEC 3
-# define M_LVL_EXPA 4
-# define M_LVL_HIST 5
-# define M_LVL_AUTOC 6
-# define M_LVL_PARSER 7
-# define M_LVL_OFFSET 7
 
 /*
 ** @file   secure_memory.h
@@ -95,4 +88,6 @@ t_mem							*get_mem(void);
 
 char							*ft_strdup_secu(const char *str, size_t lvl);
 char							*ft_strnew_secu(size_t size, size_t lvl);
+
+void							ft_secu_malloc_debug(void);
 #endif

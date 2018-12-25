@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/10 12:56:19 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/12/25 22:59:14 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include "./intern/secure_memory.h"
 # include "./intern/color.h"
 
+
 typedef struct		s_list
 {
 	void			*content;
@@ -39,6 +40,12 @@ typedef	enum		e_bool
 	True = 1,
 	False = 0,
 }					t_bool;
+
+typedef struct		s_array_byte
+{
+	char	*bytes;
+	size_t	nb;
+}					t_array_byte;
 
 /*
 ** ERROR FUNCTION
@@ -66,7 +73,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *nw);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
-void				ft_lstpush(t_list **alst, t_list *new);
+void				ft_lstpush(t_list **alst, t_list *new_elem);
 void				ft_lstpush_new(t_list **alst, void const *content,
 						size_t content_size);
 void				ft_lstremove(t_list **lst, t_list *removed);
@@ -162,6 +169,7 @@ void				ft_memdel(void **ap);
 void				*ft_memchr(const void *s, int c, size_t n);
 void				*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void				*ft_memcpy(void *dest, const void *src, size_t n);
+void				*ft_memcpy_swap(void *dest, const void *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t n);
 void				ft_bzero(void *s, size_t n);
@@ -189,10 +197,30 @@ char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_strsplit(char const *s, char c);
 
+/*
+** BITS FUNCTION
+*/
+void				b_print(int size, void const * const nb);
+void				b_print_array(t_array_byte array, char *split);
+t_array_byte		b_new_secu(size_t nb, size_t lvl);
+t_array_byte		b_new(size_t nb);
+t_array_byte		b_dump_secu(const char *s, size_t len, size_t lvl);
+t_array_byte		b_dump(const char *s, size_t len);
+void				b_clean_secu(t_array_byte arr);
+void				b_clean(t_array_byte arr);
+t_array_byte		b_joinf_secu(t_array_byte dest, t_array_byte srcs,
+														int free, size_t lvl);
+t_array_byte 		b_join_secu(t_array_byte dest, t_array_byte srcs,
+																 size_t lvl);
+t_array_byte		b_joinf(t_array_byte dest, t_array_byte srcs, int free);
+t_array_byte		b_join(t_array_byte dest, t_array_byte srcs);
+
 size_t				ft_align(size_t number, size_t divider);
 size_t				ft_align4(size_t number);
 ssize_t				ft_next_multiple(ssize_t	number, size_t divisor);
 int					ft_getopt(int argc, char const *argv[],
 						const char *optstring);
-
+char				*ft_itochar(size_t size, const void *nb, t_bool is_little);
+char				*ft_itochar_secu(size_t size, const void *nb,
+												t_bool is_little, size_t lvl);
 #endif

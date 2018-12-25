@@ -1,24 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew_secu.c                                   :+:      :+:    :+:   */
+/*   ft_secu_malloc_debug.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/10 12:47:29 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/25 23:10:44 by gpouyat          ###   ########.fr       */
+/*   Created: 2018/12/25 23:10:21 by gpouyat           #+#    #+#             */
+/*   Updated: 2018/12/25 23:24:08 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*ft_strnew_secu(size_t size, size_t lvl)
+void ft_secu_malloc_debug(void)
 {
-	char	*tab;
+	t_mem			*mem;
+	t_secu_malloc	*tmp;
 
-	tab = (char *)ft_secu_malloc_lvl(size + 1, lvl);
-	if (tab == NULL)
-		return (NULL);
-	ft_bzero((void *)tab, size + 1);
-	return (tab);
+	if (!(mem = get_mem()))
+		return ;
+	tmp = mem->first;
+	ft_putendl("--------- DEBUG SECU MALLOC ---------");
+	while (tmp)
+	{
+		ft_printf("Addr:%#lx, lvl:%lu \n", tmp->ptr, tmp->lvl);
+		tmp = tmp->next;
+	}
+	ft_putendl("--------- ****************** ---------");
+
 }

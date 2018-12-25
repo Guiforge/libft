@@ -1,24 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew_secu.c                                   :+:      :+:    :+:   */
+/*   b_print.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/10 12:47:29 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/25 23:10:44 by gpouyat          ###   ########.fr       */
+/*   Created: 2018/12/23 15:07:39 by gpouyat           #+#    #+#             */
+/*   Updated: 2018/12/25 22:27:13 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*ft_strnew_secu(size_t size, size_t lvl)
+void	b_print(int size, void const * const nb)
 {
-	char	*tab;
+	unsigned char *b;
+	unsigned char bit;
+	int j;
 
-	tab = (char *)ft_secu_malloc_lvl(size + 1, lvl);
-	if (tab == NULL)
-		return (NULL);
-	ft_bzero((void *)tab, size + 1);
-	return (tab);
+	b = (unsigned char*) nb;
+	while( --size >= 0 )
+	{
+		j = 8;
+		while (--j >= 0)
+		{
+			bit = (b[size] >> j) & 1;
+			ft_putnbr(bit);
+		}
+	}
+}
+
+void	b_print_array(t_array_byte array, char *split)
+{
+	size_t i;
+
+	i = 0;
+	while (i < array.nb)
+	{
+		if (i)
+			ft_putstr(split);
+		b_print(sizeof(char), &array.bytes[i]);
+		++i;
+	}
+	ft_putchar('\n');
 }

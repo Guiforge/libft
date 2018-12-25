@@ -1,24 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew_secu.c                                   :+:      :+:    :+:   */
+/*   b_clean.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/10 12:47:29 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/25 23:10:44 by gpouyat          ###   ########.fr       */
+/*   Created: 2018/12/25 22:37:28 by gpouyat           #+#    #+#             */
+/*   Updated: 2018/12/25 22:39:39 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*ft_strnew_secu(size_t size, size_t lvl)
+void	b_clean(t_array_byte arr)
 {
-	char	*tab;
+	ft_memdel((void **)&arr.bytes);
+	arr.nb = 0;
+}
 
-	tab = (char *)ft_secu_malloc_lvl(size + 1, lvl);
-	if (tab == NULL)
-		return (NULL);
-	ft_bzero((void *)tab, size + 1);
-	return (tab);
+void	b_clean_secu(t_array_byte arr)
+{
+	ft_secu_free(arr.bytes);
+	arr.bytes = NULL;
+	arr.nb = 0;
 }

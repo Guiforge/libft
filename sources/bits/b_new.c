@@ -1,24 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew_secu.c                                   :+:      :+:    :+:   */
+/*   b_new.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/10 12:47:29 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/25 23:10:44 by gpouyat          ###   ########.fr       */
+/*   Created: 2018/12/25 21:03:10 by gpouyat           #+#    #+#             */
+/*   Updated: 2018/12/25 22:24:12 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-char	*ft_strnew_secu(size_t size, size_t lvl)
+t_array_byte	b_new(size_t nb)
 {
-	char	*tab;
+	t_array_byte	new;
 
-	tab = (char *)ft_secu_malloc_lvl(size + 1, lvl);
-	if (tab == NULL)
-		return (NULL);
-	ft_bzero((void *)tab, size + 1);
-	return (tab);
+	new.bytes = ft_memalloc(nb);
+	if (new.bytes)
+		new.nb = nb;
+	else
+		new.nb = 0;
+	return(new);
+}
+
+t_array_byte	b_new_secu(size_t nb, size_t lvl)
+{
+	t_array_byte	new;
+
+	new.bytes = ft_secu_malloc_lvl(nb, lvl);
+	if (new.bytes)
+		new.nb = nb;
+	else
+		new.nb = 0;
+	return(new);
 }
