@@ -6,11 +6,12 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 23:10:21 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/25 23:24:08 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/12/26 23:40:32 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
+#include <malloc/malloc.h>
 
 void ft_secu_malloc_debug(void)
 {
@@ -23,7 +24,7 @@ void ft_secu_malloc_debug(void)
 	ft_putendl("--------- DEBUG SECU MALLOC ---------");
 	while (tmp)
 	{
-		ft_printf("Addr:%#lx, lvl:%lu \n", tmp->ptr, tmp->lvl);
+		ft_printf("Addr:%#lx, lvl:%lu size:%lu\n", tmp->ptr, tmp->lvl, malloc_size(tmp->ptr));
 		tmp = tmp->next;
 	}
 	ft_putendl("--------- ****************** ---------");
