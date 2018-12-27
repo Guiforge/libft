@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/25 22:59:14 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/12/27 19:07:37 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,17 @@ typedef struct		s_array_byte
 	char	*bytes;
 	size_t	nb;
 }					t_array_byte;
+
+enum	e_logger_lvl
+{
+	LOG_LVL_OFF,
+	LOG_LVL_FATAL,
+	LOG_LVL_ERROR,
+	LOG_LVL_WARN,
+	LOG_LVL_INFO,
+	LOG_LVL_DEBUG,
+	LOG_LVL_MAX
+};
 
 /*
 ** ERROR FUNCTION
@@ -206,14 +217,26 @@ t_array_byte		b_new_secu(size_t nb, size_t lvl);
 t_array_byte		b_new(size_t nb);
 t_array_byte		b_dump_secu(const char *s, size_t len, size_t lvl);
 t_array_byte		b_dump(const char *s, size_t len);
-void				b_clean_secu(t_array_byte arr);
-void				b_clean(t_array_byte arr);
+t_array_byte		b_clean_secu(t_array_byte arr);
+t_array_byte		b_clean(t_array_byte arr);
 t_array_byte		b_joinf_secu(t_array_byte dest, t_array_byte srcs,
 														int free, size_t lvl);
 t_array_byte 		b_join_secu(t_array_byte dest, t_array_byte srcs,
 																 size_t lvl);
 t_array_byte		b_joinf(t_array_byte dest, t_array_byte srcs, int free);
 t_array_byte		b_join(t_array_byte dest, t_array_byte srcs);
+
+/*
+**	LOGGER
+*/
+int		log_log(enum e_logger_lvl lvl, const char *format, va_list list);
+int		log_init(char *filename, int fd);
+void	log_close(void);
+void	log_fatal(const char *fmt, ...);
+void	log_error(const char *fmt, ...);
+void	log_warn(const char *fmt, ...);
+void	log_info(const char *fmt, ...);
+void	log_debug(const char *fmt, ...);
 
 size_t				ft_align(size_t number, size_t divider);
 size_t				ft_align4(size_t number);

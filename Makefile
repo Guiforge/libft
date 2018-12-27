@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2018/12/25 23:20:54 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/12/27 18:46:23 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -70,8 +70,8 @@ SRCS			+= get_next_line.c ft_next_multiple.c ft_getopt.c ft_align.c \
 					ft_itochar.c
 
 SRC_SUBDIR += print_srcs
-SRCS			+= convers.c  display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
-							type_of_number.c color.c ft_dprintf.c print.c
+SRCS			+= convers.c display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
+							type_of_number.c color.c ft_dprintf.c print.c ft_vprintf.c
 
 SRC_SUBDIR += secure_memory
 SRCS			+= ft_secu_free.c ft_secu_malloc.c ft_strnew_secu.c ft_strdup_secu.c \
@@ -85,6 +85,9 @@ SRCS			+= btree_apply_infix.c btree_apply_prefix.c btree_apply_suffix.c\
 
 SRC_SUBDIR += bits
 SRCS			+= b_print.c b_new.c b_dump.c b_clean.c b_join.c
+
+SRC_SUBDIR += logger
+SRCS			+= log.c log_wrappers.c
 
 
 ###############################################################################
