@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/09 14:33:06 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/04/24 09:31:49 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/12/27 17:54:07 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,7 @@ t_flags					get_struct(t_flags flags, char *format);
 int						print(int fd, char *frmt, va_list ap);
 char					*pf_couleur(char *format);
 int						ft_dprintf(int fd, char *frmt, ...);
+int						ft_vprintf(const char *format, va_list ap);
+int						ft_vdprintf(int fd, const char *format, va_list ap);
 
 #endif
