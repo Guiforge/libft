@@ -53,8 +53,10 @@ t_array_byte b_joinf(t_array_byte dest, t_array_byte srcs, int free)
 	t_array_byte	ret;
 
 	ret = b_join(dest, srcs);
-	((free == 1 || free == 3)) ? b_clean(dest) : 0;
-	((free == 2 || free == 3)) ? b_clean(srcs) : 0;
+	if (free == 1 || free == 3)
+		b_clean(dest);
+	if (free == 1 || free == 3)
+		b_clean(srcs);
 	return(ret);
 }
 
@@ -64,7 +66,9 @@ t_array_byte b_joinf_secu(t_array_byte dest, t_array_byte srcs, int free,
 	t_array_byte	ret;
 
 	ret = b_join_secu(dest, srcs, lvl);
-	((free == 1 || free == 3)) ? b_clean_secu(dest) : 0;
-	((free == 2 || free == 3)) ? b_clean_secu(srcs) : 0;
+	if (free == 1 || free == 3)
+		b_clean_secu(dest);
+	if (free == 1 || free == 3)
+		b_clean_secu(srcs);
 	return(ret);
 }
