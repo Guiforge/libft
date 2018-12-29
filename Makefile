@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2018/12/27 18:46:23 by gpouyat          ###   ########.fr        #
+#    Updated: 2018/12/27 23:58:20 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,7 +87,7 @@ SRC_SUBDIR += bits
 SRCS			+= b_print.c b_new.c b_dump.c b_clean.c b_join.c
 
 SRC_SUBDIR += logger
-SRCS			+= log.c log_wrappers.c
+SRCS			+= log.c log_wrappers.c log_func.c
 
 
 ###############################################################################

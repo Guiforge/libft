@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/27 19:07:37 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/12/27 23:58:03 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # include "./intern/secure_memory.h"
 # include "./intern/color.h"
 
+extern int			g_log_fd;
 
 typedef struct		s_list
 {
@@ -213,6 +214,8 @@ char				**ft_strsplit(char const *s, char c);
 */
 void				b_print(int size, void const * const nb);
 void				b_print_array(t_array_byte array, char *split);
+void				b_print_fd(int size, void const * const nb, int fd);
+void				b_print_array_fd(t_array_byte array, char *split, int fd);
 t_array_byte		b_new_secu(size_t nb, size_t lvl);
 t_array_byte		b_new(size_t nb);
 t_array_byte		b_dump_secu(const char *s, size_t len, size_t lvl);
@@ -232,6 +235,8 @@ t_array_byte		b_join(t_array_byte dest, t_array_byte srcs);
 int		log_log(enum e_logger_lvl lvl, const char *format, va_list list);
 int		log_init(char *filename, int fd);
 void	log_close(void);
+void	log_func_start(const char function[24]);
+void	log_func_end(const char function[24]);
 void	log_fatal(const char *fmt, ...);
 void	log_error(const char *fmt, ...);
 void	log_warn(const char *fmt, ...);
