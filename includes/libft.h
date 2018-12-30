@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/27 23:58:03 by gpouyat          ###   ########.fr       */
+/*   Updated: 2018/12/30 22:38:07 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -228,6 +228,7 @@ t_array_byte 		b_join_secu(t_array_byte dest, t_array_byte srcs,
 																 size_t lvl);
 t_array_byte		b_joinf(t_array_byte dest, t_array_byte srcs, int free);
 t_array_byte		b_join(t_array_byte dest, t_array_byte srcs);
+uint32_t			left_rot32(uint32_t nb, unsigned int count);
 
 /*
 **	LOGGER
