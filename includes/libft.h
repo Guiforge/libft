@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/04 15:24:02 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/04 15:56:08 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,10 @@ void				exit_error(const char *progname, const char *error,
 t_list				*ft_lstnew(void const *content, size_t content_size);
 t_list				*ft_lstnew_secu(void const *content, size_t content_size,
 						size_t lvl);
+
+t_list				*ft_lstextra_secu(void const *content, size_t content_size,
+																	size_t lvl);
+t_list				*ft_lstextra(void const *content, size_t content_size);
 t_list				*ft_lstmap(t_list *lst, t_list *(f)(t_list *elem));
 void				ft_lstsuppress(t_list *list);
 void				ft_lstaddnew(t_list **list, void const *content,
@@ -88,6 +92,10 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstpush(t_list **alst, t_list *new_elem);
 void				ft_lstpush_new(t_list **alst, void const *content,
 						size_t content_size);
+void				ft_lstpush_extra(t_list **alst, void const *content,
+						size_t content_size);
+void				ft_lstpush_extra_secu(t_list **alst, void const *content,
+						size_t content_size, size_t lvl);
 void				ft_lstremove(t_list **lst, t_list *removed);
 void				ft_lstsort(t_list **lst, t_bool (*sort)(t_list *a,
 						t_list *b));
