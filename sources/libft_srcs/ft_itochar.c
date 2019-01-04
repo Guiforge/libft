@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itochar.c                                          :+:      :+:    :+:   */
+/*   ft_itochar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/25 20:33:12 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/25 20:34:20 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/04 15:31:58 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,8 @@ char	*ft_itochar(size_t size, const void *nb, t_bool is_little)
 	return (ret);
 }
 
-char	*ft_itochar_secu(size_t size, const void *nb, t_bool is_little, size_t lvl)
+char	*ft_itochar_secu(size_t size, const void *nb, t_bool is_little,
+																	size_t lvl)
 {
 	char	*ret;
 

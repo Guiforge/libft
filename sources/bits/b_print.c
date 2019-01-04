@@ -6,20 +6,20 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/23 15:07:39 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/27 19:31:55 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/04 15:30:25 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 
-void	b_print(int size, void const * const nb)
+void	b_print(int size, void const *nb)
 {
-	unsigned char *b;
-	unsigned char bit;
-	int j;
+	unsigned char	*b;
+	unsigned char	bit;
+	int				j;
 
-	b = (unsigned char*) nb;
-	while( --size >= 0 )
+	b = (unsigned char *)nb;
+	while (--size >= 0)
 	{
 		j = 8;
 		while (--j >= 0)
@@ -32,7 +32,7 @@ void	b_print(int size, void const * const nb)
 
 void	b_print_array(t_array_byte array, char *split)
 {
-	size_t i;
+	size_t		i;
 
 	i = 0;
 	while (i < array.nb)
@@ -45,14 +45,14 @@ void	b_print_array(t_array_byte array, char *split)
 	ft_putchar('\n');
 }
 
-void	b_print_fd(int size, void const * const nb, int fd)
+void	b_print_fd(int size, void const *nb, int fd)
 {
-	unsigned char *b;
-	unsigned char bit;
-	int j;
+	unsigned char	*b;
+	unsigned char	bit;
+	int				j;
 
-	b = (unsigned char*) nb;
-	while( --size >= 0 )
+	b = (unsigned char *)nb;
+	while (--size >= 0)
 	{
 		j = 8;
 		while (--j >= 0)
@@ -65,7 +65,7 @@ void	b_print_fd(int size, void const * const nb, int fd)
 
 void	b_print_array_fd(t_array_byte array, char *split, int fd)
 {
-	size_t i;
+	size_t		i;
 
 	i = 0;
 	while (i < array.nb)

@@ -6,11 +6,11 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:27:15 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/02 11:23:05 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/04 15:40:45 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "../../includes/intern/get_next_line.h"
 
 static int		exist_stock(char **line, char **stock)
 {
@@ -46,7 +46,8 @@ static int		read_gnl(char **stock, char *buf, char **line)
 	return (1);
 }
 
-static int		win_lines_return(int ret, char **line, char **stock, char **buf)
+static int		win_lines_return(int ret, char **line, char **stock,
+																	char **buf)
 {
 	if (ret == -1)
 		return (-1);

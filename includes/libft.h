@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/30 22:38:07 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/04 15:24:02 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ typedef struct		s_array_byte
 	size_t	nb;
 }					t_array_byte;
 
-enum	e_logger_lvl
+enum				e_logger_lvl
 {
 	LOG_LVL_OFF,
 	LOG_LVL_FATAL,
@@ -212,9 +212,9 @@ char				**ft_strsplit(char const *s, char c);
 /*
 ** BITS FUNCTION
 */
-void				b_print(int size, void const * const nb);
+void				b_print(int size, void const *nb);
 void				b_print_array(t_array_byte array, char *split);
-void				b_print_fd(int size, void const * const nb, int fd);
+void				b_print_fd(int size, void const *nb, int fd);
 void				b_print_array_fd(t_array_byte array, char *split, int fd);
 t_array_byte		b_new_secu(size_t nb, size_t lvl);
 t_array_byte		b_new(size_t nb);
@@ -224,8 +224,8 @@ t_array_byte		b_clean_secu(t_array_byte arr);
 t_array_byte		b_clean(t_array_byte arr);
 t_array_byte		b_joinf_secu(t_array_byte dest, t_array_byte srcs,
 														int free, size_t lvl);
-t_array_byte 		b_join_secu(t_array_byte dest, t_array_byte srcs,
-																 size_t lvl);
+t_array_byte		b_join_secu(t_array_byte dest, t_array_byte srcs,
+																size_t lvl);
 t_array_byte		b_joinf(t_array_byte dest, t_array_byte srcs, int free);
 t_array_byte		b_join(t_array_byte dest, t_array_byte srcs);
 uint32_t			left_rot32(uint32_t nb, unsigned int count);
@@ -233,16 +233,17 @@ uint32_t			left_rot32(uint32_t nb, unsigned int count);
 /*
 **	LOGGER
 */
-int		log_log(enum e_logger_lvl lvl, const char *format, va_list list);
-int		log_init(char *filename, int fd);
-void	log_close(void);
-void	log_func_start(const char function[24]);
-void	log_func_end(const char function[24]);
-void	log_fatal(const char *fmt, ...);
-void	log_error(const char *fmt, ...);
-void	log_warn(const char *fmt, ...);
-void	log_info(const char *fmt, ...);
-void	log_debug(const char *fmt, ...);
+int					log_log(enum e_logger_lvl lvl, const char *format,
+																va_list list);
+int					log_init(char *filename, int fd);
+void				log_close(void);
+void				log_func_start(const char function[24]);
+void				log_func_end(const char function[24]);
+void				log_fatal(const char *fmt, ...);
+void				log_error(const char *fmt, ...);
+void				log_warn(const char *fmt, ...);
+void				log_info(const char *fmt, ...);
+void				log_debug(const char *fmt, ...);
 
 size_t				ft_align(size_t number, size_t divider);
 size_t				ft_align4(size_t number);

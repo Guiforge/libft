@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 17:50:04 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/27 17:53:25 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/04 15:39:13 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	ft_vprintf(const char *format, va_list ap)
 {
-	return(print(STDOUT_FILENO, (char *)format, ap));
+	return (print(STDOUT_FILENO, (char *)format, ap));
 }
 
-int	ft_vdprintf(int fd,const char *format, va_list ap)
+int	ft_vdprintf(int fd, const char *format, va_list ap)
 {
-	return(print(fd, (char *)format, ap));
+	return (print(fd, (char *)format, ap));
 }
