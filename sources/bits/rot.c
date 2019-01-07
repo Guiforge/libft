@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   left_rot.c                                         :+:      :+:    :+:   */
+/*   rot.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,4 +15,10 @@
 uint32_t	left_rot32(uint32_t nb, unsigned int count)
 {
 	return (nb << count) | (nb >> (32 - count));
+}
+
+
+uint32_t	right_rot32(uint32_t nb, unsigned int count)
+{
+	return (nb >> count) | (nb << (32 - count));
 }
