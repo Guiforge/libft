@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/07 18:48:55 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/08 10:06:04 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -238,6 +238,11 @@ t_array_byte		b_joinf(t_array_byte dest, t_array_byte srcs, int free);
 t_array_byte		b_join(t_array_byte dest, t_array_byte srcs);
 uint32_t			left_rot32(uint32_t nb, unsigned int count);
 uint32_t			right_rot32(uint32_t nb, unsigned int count);
+uint16_t			ft_swap_int16(uint16_t x);
+uint32_t			ft_swap_int32(uint32_t x);
+uint64_t			ft_swap_int64(uint64_t x);
+
+
 
 /*
 **	LOGGER
