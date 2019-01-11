@@ -6,14 +6,14 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 17:01:05 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/04 15:38:18 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/11 19:17:28 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/libft.h"
 #include <fcntl.h>
 
-int				g_log_fd;
+int				g_log_fd = -1;
 static	t_bool	g_init = False;
 
 int				log_init(char *filename, int fd)

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 23:54:42 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/04 15:38:37 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/11 19:22:37 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ static void		print_tabs(void)
 
 void			log_func_start(const char function[24])
 {
+	if (!g_log_fd)
+		return ;
 	print_tabs();
 	ft_dprintf(g_log_fd, "{blue}[*] Start -- %s{no}\n", function);
 	g_tabs++;
@@ -35,6 +37,8 @@ void			log_func_start(const char function[24])
 
 void			log_func_end(const char function[24])
 {
+	if (!g_log_fd)
+		return ;
 	g_tabs--;
 	print_tabs();
 	ft_dprintf(g_log_fd, "{blue}[*] End --- %s{no}\n", function);
