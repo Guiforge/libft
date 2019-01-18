@@ -6,11 +6,11 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 10:01:51 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/08 09:51:43 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/18 18:37:14 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdint.h>
+#include "../../includes/libft.h"
 
 /*
 ** swap						0x de ad be ef
@@ -44,4 +44,13 @@ uint64_t	ft_swap_int64(uint64_t x)
 			((x & 0x0000000000ff0000ULL) << 24) | \
 			((x & 0x000000000000ff00ULL) << 40) | \
 			((x & 0x00000000000000ffULL) << 56));
+}
+
+t_uint128_t	ft_swap_int128(t_uint128_t x)
+{
+	t_uint128_t ret;
+
+	ret.one = ft_swap_int64(x.two);
+	ret.one = ft_swap_int64(x.one);
+	return(ret);
 }
