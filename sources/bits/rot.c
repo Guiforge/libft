@@ -22,3 +22,13 @@ uint32_t	right_rot32(uint32_t nb, unsigned int count)
 {
 	return (nb >> count) | (nb << (32 - count));
 }
+
+uint64_t	left_rot64(uint64_t nb, unsigned int count)
+{
+	return (nb << count) | (nb >> (64 - count));
+}
+
+uint64_t	right_rot64(uint64_t nb, unsigned int count)
+{
+	return (nb >> count) | (nb << (64 - count));
+}
