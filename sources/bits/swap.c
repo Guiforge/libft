@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 10:01:51 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/18 18:37:14 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/19 15:27:23 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,11 +46,12 @@ uint64_t	ft_swap_int64(uint64_t x)
 			((x & 0x00000000000000ffULL) << 56));
 }
 
-t_uint128_t	ft_swap_int128(t_uint128_t x)
+__uint128_t	ft_swap_int128(__uint128_t x)
 {
-	t_uint128_t ret;
+	__uint128_t		real;
 
-	ret.one = ft_swap_int64(x.two);
-	ret.one = ft_swap_int64(x.one);
-	return(ret);
+	real = ft_swap_int64(x);;
+	real <<= 64; 
+	real += ft_swap_int64(x << 64);;
+	return(real);
 }

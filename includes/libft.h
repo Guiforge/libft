@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/18 18:36:14 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/19 15:27:33 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,6 @@
 # include "./intern/color.h"
 
 extern int			g_log_fd;
-
-typedef struct		s_uint128_t
-{
-	uint64_t	one;
-	uint64_t	two;
-}					t_uint128_t;
 
 typedef struct		s_list
 {
@@ -247,8 +241,7 @@ uint32_t			right_rot32(uint32_t nb, unsigned int count);
 uint16_t			ft_swap_int16(uint16_t x);
 uint32_t			ft_swap_int32(uint32_t x);
 uint64_t			ft_swap_int64(uint64_t x);
-t_uint128_t			ft_swap_int128(t_uint128_t x);
-t_uint128_t			set_simple_uint128(uint64_t x, t_bool is_little);
+__uint128_t			ft_swap_int128(__uint128_t x);
 
 
 

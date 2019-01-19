@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2019/01/18 18:33:32 by gpouyat          ###   ########.fr        #
+#    Updated: 2019/01/19 15:16:57 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,7 @@ SRCS			+= btree_apply_infix.c btree_apply_prefix.c btree_apply_suffix.c\
 
 
 SRC_SUBDIR += bits
-SRCS			+= b_print.c b_new.c b_dump.c b_clean.c b_join.c rot.c swap.c uint128.c
+SRCS			+= b_print.c b_new.c b_dump.c b_clean.c b_join.c rot.c swap.c
 
 SRC_SUBDIR += logger
 SRCS			+= log.c log_wrappers.c log_func.c
