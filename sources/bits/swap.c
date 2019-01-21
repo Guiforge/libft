@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/24 10:01:51 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/19 15:27:23 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/21 16:44:01 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@
 ** =>						0x ef be ad de
 */
 
-uint16_t	ft_swap_int16(uint16_t x)
+uint16_t		ft_swap_int16(uint16_t x)
 {
 	return (((x & 0xff00) >> 8) | ((x & 0x00ff) << 8));
 }
 
-uint32_t	ft_swap_int32(uint32_t x)
+uint32_t		ft_swap_int32(uint32_t x)
 {
 	return (((x & 0xff000000) >> 24) | \
 			((x & 0x00ff0000) >> 8) | \
@@ -34,7 +34,7 @@ uint32_t	ft_swap_int32(uint32_t x)
 			((x & 0x000000ff) << 24));
 }
 
-uint64_t	ft_swap_int64(uint64_t x)
+uint64_t		ft_swap_int64(uint64_t x)
 {
 	return (((x & 0xff00000000000000ULL) >> 56) | \
 			((x & 0x00ff000000000000ULL) >> 40) | \
@@ -46,12 +46,12 @@ uint64_t	ft_swap_int64(uint64_t x)
 			((x & 0x00000000000000ffULL) << 56));
 }
 
-__uint128_t	ft_swap_int128(__uint128_t x)
+__uint128_t		ft_swap_int128(__uint128_t x)
 {
 	__uint128_t		real;
 
-	real = ft_swap_int64(x);;
-	real <<= 64; 
-	real += ft_swap_int64(x << 64);;
-	return(real);
+	real = ft_swap_int64(x);
+	real <<= 64;
+	real += ft_swap_int64(x << 64);
+	return (real);
 }

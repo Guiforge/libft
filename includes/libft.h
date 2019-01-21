@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/19 15:59:21 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/21 16:42:25 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -245,8 +245,6 @@ uint16_t			ft_swap_int16(uint16_t x);
 uint32_t			ft_swap_int32(uint32_t x);
 uint64_t			ft_swap_int64(uint64_t x);
 __uint128_t			ft_swap_int128(__uint128_t x);
-
-
 
 /*
 **	LOGGER
