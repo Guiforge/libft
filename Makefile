@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2019/01/19 15:16:57 by gpouyat          ###   ########.fr        #
+#    Updated: 2019/01/21 17:23:13 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -99,7 +99,7 @@ CC				= clang
 CFLAGS		= -Wall -Wextra -Werror
 
 ifeq ($(DEV),yes)
-    CFLAGS		+= -g
+    CFLAGS		+= -g -Wvla
 endif
 
 ifeq ($(SAN),yes)
