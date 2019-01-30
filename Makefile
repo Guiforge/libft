@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2019/01/21 17:23:13 by gpouyat          ###   ########.fr        #
+#    Updated: 2019/01/30 12:11:24 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,7 +59,7 @@ SRCS			+= ft_getchar.c ft_putwchar.c ft_strwlen.c
 
 SRC_SUBDIR += libft_srcs/tab
 SRCS			+= ft_strdbldup.c ft_strdblfree.c ft_strdblnew.c ft_strdblprint.c\
- 							tri.c
+ 							tri.c ft_strdbllen.c
 
 SRC_SUBDIR += libft_srcs/void
 SRCS			+= ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c\

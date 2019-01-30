@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/21 16:42:25 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/30 12:10:41 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ char				**tri_strdbl_r(char **str);
 char				**tri_strdbl(char **str);
 char				**ft_strdblnew(int	size);
 void				ft_strdblprint(char **tab);
+size_t				ft_strdbllen(const char **array);
 
 /*
 ** STRING\IS FUNCTION
