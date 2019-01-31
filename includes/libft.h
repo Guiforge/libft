@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/30 12:10:41 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/01/31 21:21:24 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void				basicerror(char *name, char *error, int ex);
 void				*over_p_str(char *str, char *ag);
 void				exit_error(const char *progname, const char *error,
 						pid_t pid, int sig);
+int					over_log(int ret, enum e_logger_lvl lvl, char *fmt, ...);
 
 /*
 ** LIST FUNCTION
