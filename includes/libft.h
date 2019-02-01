@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/31 21:21:24 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/01 18:07:08 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,10 @@ void				ft_bzero(void *s, size_t n);
 int					ft_strnequ(char const *s1, char const *s2, size_t n);
 int					ft_strequ(char const *s1, char const *s2);
 size_t				ft_strlen(const char *str);
+size_t				ft_strlen_max(const char *str, size_t max);
 int					ft_strcmp(const char *s1, const char *s2);
+int					ft_strcmpi(const char *s1, const char *s2);
+int					ft_strncmpi(const char *s1, const char *s2, size_t n);
 int					ft_strncmp(const char *s1, const char *s2, size_t n);
 int					ft_toupper(int c);
 int					ft_tolower(int c);

@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2019/01/30 12:11:24 by gpouyat          ###   ########.fr        #
+#    Updated: 2019/02/01 16:45:47 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,6 @@ SRCS			+= ft_atoi_base.c ft_atoi.c ft_strcat.c ft_strchr.c ft_strcpy.c\
 						   ft_strmapi.c ft_strncat.c ft_strncpy.c ft_strnstr.c ft_strrchr.c\
 							  ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtolower.c\
 								 ft_tolower.c ft_toupper.c
-
 SRC_SUBDIR += libft_srcs/string/comp
 SRCS			+= ft_strcmpa.c ft_strcmp.c ft_strequ.c ft_strncmp.c ft_strnequ.c
 
