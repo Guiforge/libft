@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 15:01:10 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/10/10 13:04:08 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/01 12:01:13 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ static char		ft_getopt_current(char **next, const char **argv)
 	if (!*next || !**next)
 		*next = (char *)argv[g_optind] + 1;
 	ret = **next;
-	++*next;
+	if (ret)
+		++*next;
 	if (!**next)
 		g_optind++;
 	g_optopt = ret;
