@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/29 14:30:23 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/01/31 21:21:06 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/01 12:08:24 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ int		over_log(int ret, enum e_logger_lvl lvl, char *fmt, ...)
 	print(STDERR_FILENO, (char *)fmt, list);
 	log_log(lvl, fmt, list);
 	va_end(list);
-	return(ret);
+	return (ret);
 }
