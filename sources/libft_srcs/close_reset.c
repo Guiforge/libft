@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   close_reset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/02 21:22:16 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/05 13:48:18 by gpouyat          ###   ########.fr       */
+/*   Created: 2019/02/05 12:08:19 by gpouyat           #+#    #+#             */
+/*   Updated: 2019/02/05 12:09:43 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../includes/libft.h"
 
-size_t	ft_strlen(const char *str)
+void	close_reset(int *fd)
 {
-	size_t		i;
-
-	i = 0;
-	while (str && str[i])
-		i = i + 1;
-	return (i);
-}
-
-size_t	ft_strlen_max(const char *str, size_t max)
-{
-	size_t		i;
-
-	i = 0;
-	while (str && str[i] && i <= max)
-		i = i + 1;
-	return (i);
+	if (!fd)
+		return ;
+	close(*fd);
+	*fd = -1;
 }

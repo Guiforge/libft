@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/01 18:07:08 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/05 12:10:57 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,4 +274,5 @@ int					ft_getopt(int argc, char const *argv[],
 char				*ft_itochar(size_t size, const void *nb, t_bool is_little);
 char				*ft_itochar_secu(size_t size, const void *nb,
 												t_bool is_little, size_t lvl);
+void				close_reset(int *fd);
 #endif
