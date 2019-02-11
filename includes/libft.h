@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/05 12:10:57 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/11 10:29:40 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -221,6 +221,8 @@ char				*ft_strcat(char *dest, const char *src);
 char				*ft_strncat(char *dest, const char *src, size_t n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_strsplit(char const *s, char c);
+char				*ft_overwrite(char *string, char old, char new,\
+																ssize_t count);
 
 /*
 ** BITS FUNCTION
@@ -275,4 +277,5 @@ char				*ft_itochar(size_t size, const void *nb, t_bool is_little);
 char				*ft_itochar_secu(size_t size, const void *nb,
 												t_bool is_little, size_t lvl);
 void				close_reset(int *fd);
+char				*ft_getip(void);
 #endif

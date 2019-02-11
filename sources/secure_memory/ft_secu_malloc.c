@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/20 19:57:29 by gpouyat           #+#    #+#             */
-/*   Updated: 2018/12/25 23:10:37 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/09 12:56:22 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,28 +47,15 @@ static void		ft_s_malloc_mouv(t_secu_malloc *secu_malloc, t_mem *mem)
 
 void			*ft_secu_malloc_lvl(size_t size, size_t lvl)
 {
-	t_mem			*mem;
-	t_secu_malloc	*secu_malloc;
 	void			*ptr;
 
-	mem = get_mem();
-	if (!mem ||
-		!(secu_malloc = (t_secu_malloc*)ft_memalloc(sizeof(t_secu_malloc))))
-	{
-		over("Malloc secu: Malloc failed (return NULL)", 2);
-		return (NULL);
-	}
 	if (!(ptr = ft_memalloc(size)))
 	{
 		free(secu_malloc);
 		over("Malloc secu: Malloc failed (return NULL)", 2);
 		return (NULL);
 	}
-	secu_malloc->lvl = lvl;
-	secu_malloc->ptr = ptr;
-	secu_malloc->next = NULL;
-	ft_s_malloc_mouv(secu_malloc, mem);
-	return (ptr);
+	return (ft_secu_add(ptr, lvl));
 }
 
 /*
@@ -103,4 +90,23 @@ t_mem			*get_mem(void)
 		mem->last = NULL;
 	}
 	return (mem);
+}
+
+void			*ft_secu_add(void *secu_ptr, size_t lvl)
+{
+	t_mem			*mem;
+	t_secu_malloc	*secu_malloc;
+
+	mem = get_mem();
+	if (!mem ||
+		!(secu_malloc = (t_secu_malloc*)ft_memalloc(sizeof(t_secu_malloc))))
+	{
+		over("Malloc secu: Malloc failed (return NULL)", 2);
+		return (NULL);
+	}
+	secu_malloc->lvl = lvl;
+	secu_malloc->ptr = secu_ptr;
+	secu_malloc->next = NULL;
+	ft_s_malloc_mouv(secu_malloc, mem);
+	return (secu_ptr);
 }

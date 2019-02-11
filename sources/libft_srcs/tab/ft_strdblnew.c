@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/11 16:26:00 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/02/17 10:21:25 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/11 16:51:38 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,7 @@ char	**ft_strdblnew(int size)
 	i = 0;
 	if (size <= 0)
 		return (NULL);
-	if (!(str = (char **)malloc(sizeof(char*) * (size + 1))))
+	if (!(str = (char **)ft_memalloc(sizeof(char*) * (size + 1))))
 		return (NULL);
-	while (i <= size)
-	{
-		str[i] = NULL;
-		i++;
-	}
 	return (str);
 }

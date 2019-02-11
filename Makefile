@@ -6,7 +6,7 @@
 #    By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/02/05 12:29:27 by gpouyat           #+#    #+#              #
-#    Updated: 2019/02/05 12:10:37 by gpouyat          ###   ########.fr        #
+#    Updated: 2019/02/11 10:30:28 by gpouyat          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,8 +32,9 @@ SRC_SUBDIR += libft_srcs/string
 SRCS			+= ft_atoi_base.c ft_atoi.c ft_strcat.c ft_strchr.c ft_strcpy.c\
  							ft_striter.c ft_striteri.c ft_strlcat.c ft_strlen.c ft_strmap.c\
 						   ft_strmapi.c ft_strncat.c ft_strncpy.c ft_strnstr.c ft_strrchr.c\
-							  ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtolower.c\
-								 ft_tolower.c ft_toupper.c
+							  ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtolower.c \
+							  ft_overwrite.c ft_tolower.c ft_toupper.c
+
 SRC_SUBDIR += libft_srcs/string/comp
 SRCS			+= ft_strcmpa.c ft_strcmp.c ft_strequ.c ft_strncmp.c ft_strnequ.c
 
@@ -66,7 +67,7 @@ SRCS			+= ft_bzero.c ft_memalloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c\
 
 SRC_SUBDIR += libft_srcs
 SRCS			+= get_next_line.c ft_next_multiple.c ft_getopt.c ft_align.c \
-					ft_itochar.c close_reset.c
+					ft_itochar.c close_reset.c ft_getip.c
 
 SRC_SUBDIR += print_srcs
 SRCS			+= convers.c display_flags.c ft_cs.c ft_o.c ft_printf.c ft_x.c get.c\
