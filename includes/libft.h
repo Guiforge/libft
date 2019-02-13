@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/11 10:29:40 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/11 18:08:51 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -223,6 +223,7 @@ char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_strsplit(char const *s, char c);
 char				*ft_overwrite(char *string, char old, char new,\
 																ssize_t count);
+size_t				ft_strcount(char *str, char c);
 
 /*
 ** BITS FUNCTION
