@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/11 18:08:51 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/14 14:27:14 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include "./intern/ft_btree.h"
 # include "./intern/secure_memory.h"
 # include "./intern/color.h"
+# include "./intern/t_bool.h"
 
 extern int			g_log_fd;
 
@@ -35,12 +36,6 @@ typedef struct		s_list
 	struct s_list	*next;
 	struct s_list	*prev;
 }					t_list;
-
-typedef	enum		e_bool
-{
-	True = 1,
-	False = 0,
-}					t_bool;
 
 typedef struct		s_array_byte
 {
@@ -279,4 +274,7 @@ char				*ft_itochar_secu(size_t size, const void *nb,
 												t_bool is_little, size_t lvl);
 void				close_reset(int *fd);
 char				*ft_getip(void);
+char				*ft_exp_path(const char * const path,\
+												const char * const abs_current);
+
 #endif
