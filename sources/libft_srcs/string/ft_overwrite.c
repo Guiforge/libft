@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 10:24:19 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/11 10:34:16 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/15 15:05:50 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_overwrite(char *string, char old, char new, ssize_t count)
 	if (!string)
 		return (NULL);
 	i = 0;
-	while(string[i] && count)
+	while (string[i] && count)
 	{
 		if (string[i] == old)
 		{
@@ -28,5 +28,5 @@ char	*ft_overwrite(char *string, char old, char new, ssize_t count)
 		}
 		i++;
 	}
-	return(string);
+	return (string);
 }

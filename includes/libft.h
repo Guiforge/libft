@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/14 14:27:14 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/15 15:03:07 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -274,7 +274,7 @@ char				*ft_itochar_secu(size_t size, const void *nb,
 												t_bool is_little, size_t lvl);
 void				close_reset(int *fd);
 char				*ft_getip(void);
-char				*ft_exp_path(const char * const path,\
-												const char * const abs_current);
+char				*ft_exp_path(const char *path,\
+												const char *abs_current);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/11 18:06:22 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/13 10:23:38 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/15 15:09:05 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strcount(char *str, char c)
 	count = 0;
 	if (!str)
 		return (0);
-	while(str[i])
+	while (str[i])
 	{
 		if (str[i] == c)
 			count++;

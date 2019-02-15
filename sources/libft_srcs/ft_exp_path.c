@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 14:53:45 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/14 14:54:41 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/02/15 15:08:52 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,11 @@ static	char	*remove_dots(char *path)
 
 	if (!path)
 		return (NULL);
-	while ((start = ft_strstr(path, "/./")) || ((start = ft_strstr(path, "/.")) && !start[2]))
+	while ((start = ft_strstr(path, "/./")) ||\
+								((start = ft_strstr(path, "/.")) && !start[2]))
 		ft_memcpy(start, start + 2, ft_strlen(start + 1));
-	while ((start2 = ft_strstr(path, "/../")) || ((start2 = ft_strstr(path, "/..")) && !start2[3]))
+	while ((start2 = ft_strstr(path, "/../")) ||\
+							((start2 = ft_strstr(path, "/..")) && !start2[3]))
 	{
 		start = find_start_ddots(path, start2);
 		if (start == path)
@@ -64,7 +66,6 @@ static	char	*remove_dots(char *path)
 		if (start2[3] == '/')
 			start2++;
 		ft_memcpy(start, start2 + 3, ft_strlen(start2 + 2));
-		
 	}
 	if (path && ft_strlen(path) > 2 &&
 									ft_strequ(&path[ft_strlen(path) - 2], "/."))
@@ -94,7 +95,7 @@ static char		*remove_backslash(char *path)
 	return (path);
 }
 
-static char		*get_abspath(const char * const path, const char * const abs_current)
+static char		*get_abspath(const char *path, const char *abs_current)
 {
 	char		current[PATH_MAX + 1];
 	char		*ret;
@@ -104,9 +105,8 @@ static char		*get_abspath(const char * const path, const char * const abs_curren
 		ft_bzero(current, PATH_MAX + 1);
 		ft_strncpy(current, abs_current, PATH_MAX);
 	}
-	else
-		if (!getcwd(current, PATH_MAX))
-			return (NULL);
+	else if (!getcwd(current, PATH_MAX))
+		return (NULL);
 	if (path && *path != '/')
 	{
 		ret = ft_strnew(ft_strlen(current) + ft_strlen(path) + 1);
@@ -132,7 +132,7 @@ static char		*get_abspath(const char * const path, const char * const abs_curren
 ** @return path Returns the modified path
 */
 
-char			*ft_exp_path(const char * const path, const char * const abs_current)
+char			*ft_exp_path(const char *path, const char *abs_current)
 {
 	char		*ret;
 	size_t		len;
