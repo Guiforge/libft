@@ -98,6 +98,12 @@ NAME 			= libft.a
 CC				= clang
 CFLAGS		= -Wall -Wextra -Werror
 
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S), Linux)
+	CFLAGS		+= -fPIC
+endif
+
 ifeq ($(DEV),yes)
     CFLAGS		+= -g -Wvla
 endif

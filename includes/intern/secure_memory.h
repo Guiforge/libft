@@ -17,6 +17,12 @@
 # include <sys/types.h>
 # include <signal.h>
 
+# ifdef __APPLE__
+#  include <malloc/malloc.h>
+# else
+#  define malloc_size(x) 0
+# endif
+
 # define MALLOC_LVL_DEFAULT 0
 # define M_LVL_FUNCT 1
 
