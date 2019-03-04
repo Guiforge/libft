@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line.1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:27:15 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/03/04 15:16:42 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/03/04 15:18:21 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/intern/get_next_line.h"
 
-static int		exist_stock(char **line, char **stock)
+static int		exist_stock(char **line, char **stock, char *str)
 {
 	char		*temp;
 
-	if ((temp = ft_strchr(*stock, '\n')))
+	if ((temp = ft_strstr(*stock, str)))
 	{
 		*temp = '\0';
 		*line = ft_strdup(*stock);
@@ -27,11 +27,11 @@ static int		exist_stock(char **line, char **stock)
 	return (1);
 }
 
-static int		read_gnl(char **stock, char *buf, char **line)
+static int		read_gnl(char **stock, char *buf, char **line, char *str)
 {
 	char		*temp;
 
-	if ((temp = ft_strchr(buf, '\n')))
+	if ((temp = ft_strstr(buf, str)))
 	{
 		*temp = '\0';
 		*line = ft_strjoin(*stock, buf);
@@ -61,7 +61,7 @@ static int		win_lines_return(int ret, char **line, char **stock,
 	return (0);
 }
 
-int				get_next_line(const int fd, char **line)
+int				get_next_str(const int fd, char **line, char *str)
 {
 	char		*buf;
 	int			ret;
@@ -70,7 +70,7 @@ int				get_next_line(const int fd, char **line)
 
 	if (stock)
 	{
-		if ((exist_stock(line, &stock)) == 0)
+		if ((exist_stock(line, &stock, str)) == 0)
 			return (1);
 	}
 	else
@@ -80,7 +80,7 @@ int				get_next_line(const int fd, char **line)
 	while ((ret = (int)read(fd, buf, BUFF_SIZE)) > 0)
 	{
 		buf[ret] = '\0';
-		if (read_gnl(&stock, buf, line) == 0)
+		if (read_gnl(&stock, buf, line, str) == 0)
 			return (1);
 		temp = stock;
 		stock = ft_strjoin(stock, buf);
