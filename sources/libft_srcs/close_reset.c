@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/05 12:08:19 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/15 15:03:24 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/03/04 19:15:00 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	close_reset(int *fd)
 {
-	if (!fd)
+	if (fd <= 0)
 		return ;
 	close(*fd);
 	*fd = -1;
