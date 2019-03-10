@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/29 15:01:10 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/01 12:01:13 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/03/10 14:38:59 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ int				ft_getopt(int argc, char const *argv[], const char *optstring)
 	int			check;
 	char		current;
 
-	(void)optstring;
 	if (ft_getopt_init(argc, argv))
 		return (-1);
 	current = ft_getopt_current(&next, argv);

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/02 11:27:15 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/03/04 15:16:42 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/03/10 14:39:11 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 static int		exist_stock(char **line, char **stock)
 {
 	char		*temp;
+	char		*tmp_stock;
 
+	tmp_stock = *stock;
 	if ((temp = ft_strchr(*stock, '\n')))
 	{
 		*temp = '\0';
 		*line = ft_strdup(*stock);
 		*stock = ft_strdup(temp + 1);
 		temp = NULL;
+		ft_strdel(&tmp_stock);
 		return (0);
 	}
 	return (1);
