@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/15 15:03:07 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/03/11 17:23:03 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -205,6 +205,7 @@ int					ft_atoi(const char *str);
 char				*ft_strsub(char const *s, unsigned int start, size_t len);
 char				*ft_strmap(char const *s, char (*f)(char));
 char				*ft_strstr(const char *big, const char *little);
+ssize_t				ft_memstr(const char *big, const char *little, size_t len);
 char				*ft_strnstr(const char *big, const char *little, size_t n);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strchr(const char *s, int c);
@@ -219,6 +220,7 @@ char				**ft_strsplit(char const *s, char c);
 char				*ft_overwrite(char *string, char old, char new,\
 																ssize_t count);
 size_t				ft_strcount(char *str, char c);
+size_t				ft_memcount(char *str, char c, size_t len_str);
 
 /*
 ** BITS FUNCTION

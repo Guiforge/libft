@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/09 13:14:34 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/02/15 15:08:40 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/03/15 11:47:43 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,10 @@
 
 char	*ft_getip(void)
 {
-	char			hostbuffer[256];
 	char			*ip_buffer;
 	struct hostent	*host_entry;
 
-	if (gethostname(hostbuffer, sizeof(hostbuffer)) == -1)
-		return (NULL);
-	host_entry = gethostbyname(hostbuffer);
+	host_entry = gethostbyname("localhost");
 	if (!host_entry)
 		return (NULL);
 	ip_buffer = inet_ntoa(*((struct in_addr*)

@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/09 14:20:24 by gpouyat           #+#    #+#             */
-/*   Updated: 2017/07/17 15:51:39 by guiforge         ###   ########.fr       */
+/*   Updated: 2019/03/11 17:22:48 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,32 @@ char	*ft_strstr(const char *big, const char *little)
 		i++;
 	}
 	return (NULL);
+}
+
+ssize_t	ft_memstr(const char *big, const char *little, size_t len)
+{
+	unsigned int	i;
+	unsigned int	j;
+	unsigned int	temp;
+
+	i = 0;
+	j = 0;
+	if (!big || !little)
+		return (-1);
+	if (little[0] == '\0')
+		return (0);
+	while (i < len)
+	{
+		j = 0;
+		temp = i;
+		while (big[temp] == little[j] && big[temp] && little[j])
+		{
+			temp++;
+			j++;
+			if (little[j] == '\0')
+				return (i);
+		}
+		i++;
+	}
+	return (-1);
 }
