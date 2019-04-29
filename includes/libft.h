@@ -6,7 +6,7 @@
 /*   By: gpouyat <gpouyat@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/26 16:21:53 by gpouyat           #+#    #+#             */
-/*   Updated: 2019/03/11 17:23:03 by gpouyat          ###   ########.fr       */
+/*   Updated: 2019/04/29 15:38:04 by gpouyat          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,6 +177,7 @@ void				ft_putwchar(wchar_t c);
 void				ft_putwstr_fd(wchar_t *s, int fd);
 void				ft_putwchar_fd(wchar_t c, int fd);
 int					ft_atoi_base(char *str, int base);
+unsigned int		ft_atoi_unsigned(const char *str);
 char				*ft_strtolower(char *str);
 size_t				ft_strlcat(char *dest, const char *src, size_t size);
 void				ft_striteri(char *s, void (*f)(unsigned int, char *));
